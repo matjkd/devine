@@ -18,7 +18,6 @@ function list_news()
 		
 		return $data;
 		}
-		
 function get_news($id)
 		{
 			$data = array();
