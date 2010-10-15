@@ -76,7 +76,7 @@ position:relative;
 	min-height:200px;
 	width: 230px;
 	display:inline;#c41b1b;
-	padding:20px;
+	padding:20px 20px 20px 0;
 background: #ffffff;
 position:relative;
 color:#999999;
@@ -174,9 +174,9 @@ text-align: left;
 	
 	display:block;
 	float:left;
-	width: 650px;
+	width: 690px;
 	min-height:200px;
-	padding:20px
+	padding:20px 0 20px 20px;
 }
 .mainbody {
 	width: 960px;
@@ -393,12 +393,12 @@ Profiles
 
 #left_body {
 	float:left;
-	width:320px;
+	width:340px;
 }
 
 #right_body {
 	float:left;
-	width:320px;
+	width:340px;
 	
 }
 
