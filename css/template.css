@@ -1,0 +1,371 @@
+body {
+	
+	
+	background: url(/~dg001/images/background.jpg) repeat-x #858585;
+	font: 12px/1.2 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+	color:#6f6f6f;
+	height:100%;
+}
+h1 {
+	color: #13527d;
+	margin-top:0px;
+	
+	font: 28px/2.4 Georgia, "Times New Roman", serif;
+	line-height:18px;
+}
+h2 {
+	color: #13527d;
+	margin-top:0px;
+	font: 15px/1.5 Georgia, "Times New Roman", serif;
+}
+h3 {
+	color: #13527d;
+	margin-top:0px;
+	font: 15px/1.5 Georgia, "Times New Roman", serif;
+	padding-top:0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	margin-top:0px;
+}
+.news_date {
+	color: #999999;
+	font-style:italic;
+}
+/* Normal link */
+a {
+	color: #333333;
+	text-decoration: none;
+}
+img
+{ 
+ border-style: none;
+}
+
+a:hover, a:active, a:focus {
+	color: #c41b1b;
+	text-decoration: none;
+}
+.wrapper {
+	
+	width: 960px;
+	
+	border:0px solid #000000;
+	box-shadow:8px 8px 30px #333;
+-webkit-box-shadow:8px 8px 30px #333;
+-moz-box-shadow: 8px 8px 30px #333;
+	position:relative;
+	margin: 0px auto 0px;
+	
+	
+}
+.top_menu {
+	width:920px;
+	height:30px;
+	padding: 0px 20px;
+	color: #ffffff;
+	background: #143145;
+	
+position:relative;
+}
+.left_col {
+	float:left;
+	min-height:200px;
+	width: 230px;
+	display:inline;#c41b1b;
+	padding:20px;
+background: url(/~dg001/images/sidepanel.jpg) repeat-x #276087;
+position:relative;
+color:#aabbcd;
+}
+
+.left_col a {
+	color:#ffffff;
+}
+.left_col h3   {
+	color:#aabbcd;
+}
+.left_col h4   {
+	color:#aabbcd;
+}
+.heading {
+	
+	height:100px;
+	Padding: 0px;
+	margin:0 auto;
+width: 960px;
+
+	
+}
+.leftside {
+	width:313px;
+	height:230px;
+	padding: 0 0 20px;
+	margin-right:10px;
+	float:left;
+	background: #afbeda;
+}
+.leftside h2, .rightside h2 {
+	color: #ffffff;
+	background: #276087;
+	padding:5px 20px;
+}
+.practice_list {
+	padding: 0 20px;
+}
+.rightside {
+	width:313px;
+	height:230px;
+	padding: 0 0 20px;
+	margin-left:10px;
+	float:left;
+	background: #afbeda;
+}
+.mainmenu {
+	
+	background: url(/~dg001/~dg001/css/three_0.gif) repeat-x;
+	height: 38px;
+	border-bottom: 0px solid #000000;
+	border-top: 0px solid #cccccc;
+	padding: 0 0 0 25px;
+}
+.blocks {
+	background-color: #ffffff;
+	height: 3px;
+	
+}
+.redblocks {
+	background: url(/~dg001/images/main/foot.jpg) repeat #800000;
+	height: 14px;
+	
+}
+.footer {
+	width: 960px;
+margin: 4px auto;
+text-align: center;
+	color:#ffffff;
+	font-size: 0.85em;
+}
+.footer a {
+	color:#dddddd;
+}
+
+.main-wrap {
+	padding:0px 0px 0 0;
+	width: 960px;
+	
+}
+.slideshow {
+	height:197px;
+	margin:0;
+	z-index:-5;
+}
+.content {
+	
+	position:relative;
+	background: url(/~dg001/images/content_background.jpg) repeat-x #ffffff;
+	display:block;
+	float:left;
+	width: 650px;
+	min-height:200px;
+	padding:20px
+}
+.mainbody {
+	width: 960px;
+	display:block;
+	float:left;
+	margin: 0;
+	background: url(/~dg001/images/mainbodyback.jpg) repeat-y #276087;
+	
+}
+.lowerblock {
+	color: #ffffff;
+	position:absolute;
+	width: 670px;
+	margin-bottom: 0px;
+	background:#762609;
+	
+	bottom: 0px;
+}
+.site_base {
+	height: 60px;
+	background: #143145;
+	margin:0px;
+	padding:20px 20px 20px 20px;
+	width:920px;
+	display:block;
+}
+.logo {
+	float:left;
+	height:63px;
+	width:960px;
+	margin:20px 0 10px 10px;
+	background: url(/~dg001/images/logo.png) no-repeat;
+}
+.side {
+	width: 470px;
+	float:left;
+	padding-left: 0px;
+	height: 445px;
+	
+	
+}
+.galleryshadow {
+	width: 11px;
+	height: 445px;
+	float:left;
+	padding-left: 0px;
+	background: url(/~dg001/images/main/galleryshadow.gif) repeat-y;
+}
+
+.redblocks a {
+	color:#ffffff;
+}
+.login_box {
+	width:300px;
+	padding:20px;
+	margin:20px auto auto 30px;
+	background: #143145;
+	border:1px solid #ffffff;
+	text-align:center;
+}
+#home_blocks {
+	float:left;
+	color: #ffffff;
+	width:314px;
+	text-decoration:none;
+	margin:5px 10px 5px 0;
+	padding:0px;
+	height:100px;
+	background:url(/~dg001/images/sidepanel.jpg) repeat-x #276087;
+	
+	
+}
+
+#home_blocks strong {
+	color: #ffffff;
+	line-height: 29px;
+	font-size:1.3em;
+	padding:5px 10px 0 0px;
+	text-align:left;
+	text-decoration:none;
+}
+#home_blocks img {
+	margin-right:5px;
+	width:100px;
+	 height:100px;
+	  float:left; 
+	
+}
+#home_blocks a {
+		color:#b3b3d2;
+}
+#home_blocks:hover, #home_blocks:active, #home_blocks:focus {
+	background:#046ba1;
+	color:#b3b3d2;
+	background-image:none;
+}
+/*
+Profiles
+*/
+#profilelist {
+	color: #ffffff;
+	width:314px;
+	float:left;
+	margin:5px;
+	padding:0px;
+	height:100px;
+	background: #276087;
+}
+#profilelist a {
+	color: #ffffff;
+}
+#profilelist img {
+	margin-right:5px;
+	width:100px;
+	 height:100px;
+	  float:left; 
+	
+}
+#profiletext {
+	margin-top:5px;
+}
+.form_label {
+	float:left;
+	font-weight:bold;
+	width:100px;
+	background-color:#acb5bf;
+	padding:5px;
+	color:#ffffff;
+}
+/*shadow*/
+.shadowcontainer {
+	margin: 0px auto 30px;
+	width:1010px;
+	
+
+	border:0px solid #000000;
+	
+	}
+.tl{ height:25px; width:25px; float:left; background: url(/~dg001/~dg001/images/shadow/tl.png); }
+.t{height:25px; width:960px; float:left; background:url(/~dg001/~dg001/images/shadow/t.png);  }
+.tr{height:25px; width:25px; float:left; background:url(/~dg001/~dg001/images/shadow/tr.png);  }
+.l{width:25px; height:803px; float:left; background: url(/~dg001/~dg001/images/shadow/l.png);  }
+.r{width:25px;  height:803px; float:left; background:url(/~dg001/~dg001/images/shadow/r.png); }
+.bl{height:25px; width:25px; float:left; background:url(/~dg001/~dg001/images/shadow/bl.png);  }
+.b{height:25px; width:960px;float:left; background:url(/~dg001/~dg001/images/shadow/b.png);  }
+.br{height:25px; width:25px;float:left; background:url(/~dg001/images/shadow/br.png);  }
+
+
+/* container for slides */
+
+
+/* single slide */
+
+
+/* header */
+
+
+
+
+/* single tab */
+
+
+/* mouseover state */
+.slidetabs a:hover {
+	background-position:0 -8px;      
+}
+
+/* active state (current page state) */
+.slidetabs a.current {
+	background-position:0 -16px;     
+} 	
+
+
+/* prev and next buttons */
+.forward, .backward {
+	
+	color:#000000;
+	
+	
+	cursor:pointer;
+	font-size:10px;
+	
+}
+
+/* next */
+.forward 				{ color:#000000; }
+.forward:hover 		{ color:#000000; }
+.forward:active 	 	{ color:#000000; } 
+
+
+/* prev */
+.backward:hover  		{ color:#000000; }
+.backward:active  	{ color:#000000; }
+
+/* disabled navigational button. is not needed when tabs are configured with rotate: true */
+.disabled {
+	visibility:hidden !important;		
+}
+.clear {
+	clear:both;
+}
