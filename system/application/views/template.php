@@ -31,11 +31,11 @@
 </div>
 <?php if(isset($slideshow))
 {?>
-<div class="slideshow">
+
 
 <?php $this->load->view($slideshow); ?>
 
-</div>	
+	
 <?php }?>
 
 

@@ -1,7 +1,7 @@
 body {
 	
 	
-	background: url(/~dg001/images/background.jpg) repeat-x #858585;
+	background: #ffffff;
 	font: 12px/1.2 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
 	color:#6f6f6f;
 	height:100%;
@@ -9,7 +9,7 @@ body {
 h1 {
 	color: #13527d;
 	margin-top:0px;
-	
+	text-transform:capitalize;
 	font: 28px/2.4 Georgia, "Times New Roman", serif;
 	line-height:18px;
 }
@@ -17,6 +17,7 @@ h2 {
 	color: #13527d;
 	margin-top:0px;
 	font: 15px/1.5 Georgia, "Times New Roman", serif;
+	text-transform:capitalize;
 }
 h3 {
 	color: #13527d;
@@ -50,21 +51,24 @@ a:hover, a:active, a:focus {
 	width: 960px;
 	
 	border:0px solid #000000;
-	box-shadow:8px 8px 30px #333;
+	/*
+box-shadow:8px 8px 30px #333;
 -webkit-box-shadow:8px 8px 30px #333;
 -moz-box-shadow: 8px 8px 30px #333;
+*/
 	position:relative;
 	margin: 0px auto 0px;
 	
 	
 }
 .top_menu {
-	width:920px;
+	width:960px;
 	height:30px;
-	padding: 0px 20px;
-	color: #ffffff;
-	background: #143145;
-	
+	padding: 0px 0px;
+	margin-bottom:5px;
+	color: #143145;
+	border-top: 1px solid #4d4d4d;
+	border-bottom: 1px solid #4d4d4d;	
 position:relative;
 }
 .left_col {
@@ -73,19 +77,19 @@ position:relative;
 	width: 230px;
 	display:inline;#c41b1b;
 	padding:20px;
-background: url(/~dg001/images/sidepanel.jpg) repeat-x #276087;
+background: #ffffff;
 position:relative;
-color:#aabbcd;
+color:#999999;
 }
 
 .left_col a {
-	color:#ffffff;
+	color:#6f6f6f;
 }
 .left_col h3   {
-	color:#aabbcd;
+	color:#6f6f6f;
 }
 .left_col h4   {
-	color:#aabbcd;
+	color:#6f6f6f;
 }
 .heading {
 	
@@ -141,12 +145,12 @@ width: 960px;
 .footer {
 	width: 960px;
 margin: 4px auto;
-text-align: center;
-	color:#ffffff;
+text-align: left;
+	color:#4d4d4d;
 	font-size: 0.85em;
 }
 .footer a {
-	color:#dddddd;
+	color:#353535;
 }
 
 .main-wrap {
@@ -159,10 +163,15 @@ text-align: center;
 	margin:0;
 	z-index:-5;
 }
+.slideshow_large {
+	height:360px;
+	margin:0;
+	z-index:-5;
+}
 .content {
 	
 	position:relative;
-	background: url(/~dg001/images/content_background.jpg) repeat-x #ffffff;
+	
 	display:block;
 	float:left;
 	width: 650px;
@@ -174,7 +183,7 @@ text-align: center;
 	display:block;
 	float:left;
 	margin: 0;
-	background: url(/~dg001/images/mainbodyback.jpg) repeat-y #276087;
+	
 	
 }
 .lowerblock {
@@ -188,17 +197,18 @@ text-align: center;
 }
 .site_base {
 	height: 60px;
-	background: #143145;
+	background: transparent;
 	margin:0px;
 	padding:20px 20px 20px 20px;
 	width:920px;
 	display:block;
+	border-top:solid 1px #4d4d4d;
 }
 .logo {
 	float:left;
 	height:63px;
 	width:960px;
-	margin:20px 0 10px 10px;
+	margin:20px 0 10px 0px;
 	background: url(/~dg001/images/logo.png) no-repeat;
 }
 .side {
@@ -236,7 +246,7 @@ text-align: center;
 	margin:5px 10px 5px 0;
 	padding:0px;
 	height:100px;
-	background:url(/~dg001/images/sidepanel.jpg) repeat-x #276087;
+	
 	
 	
 }
@@ -369,3 +379,26 @@ Profiles
 .clear {
 	clear:both;
 }
+#menu_block {
+	float:left;
+	width:290px;
+	clear:both;
+	background: transparent;
+	padding: 3px;
+	border-bottom: 1px solid  #999999;
+}
+#menu_block:hover {
+	background: #dddddd;
+}
+
+#left_body {
+	float:left;
+	width:320px;
+}
+
+#right_body {
+	float:left;
+	width:320px;
+	
+}
+

@@ -56,8 +56,9 @@ div#menu a {
     float: left;
     line-height: 41px;
 	text-transform:uppercase;
+	font-weight:bold;
     text-decoration: none;
-    font: normal .95em Trebuchet MS;
+    font: 1em Trebuchet MS;
 	color:#1e4b7c;
 }
 div#menu a:hover, div#menu a:hover span { color: #fff;  border:none;
@@ -89,7 +90,7 @@ div#menu a {
 }
 div#menu span {
     margin-top: 10px;
-color:#ffffff;
+color:#143145;
 }
 div#menu ul a:hover span {
 color:#1e4b7c;

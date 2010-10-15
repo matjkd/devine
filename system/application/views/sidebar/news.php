@@ -10,19 +10,17 @@ $(function() {
 });
 </script>
 
-<img src="<?=base_url()?>images/headings/latest_news.png">
+<h1>Latest News</h1>
 
 
 <div id="slnews" class="slnews" style="background:transparent;">
 
 <?php foreach($news as $news):?>
-<div style="background: url(/~dg001/images/sidepanel.jpg) repeat-x #276087;
-background-position: -0px -39px;">
-<p><h3>
+<div style="background-position: -0px -39px;">
+<h3>
 <?=$news['news_title'];?>
 </h3>
 
-</p>
 <?php
 
 $shortnews = substr($news['news_content'], 0, 300);
