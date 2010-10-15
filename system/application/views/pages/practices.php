@@ -18,27 +18,29 @@
 ?>
 
 
-	<div class="leftside">
+	<div id="left_body">
 	<h2>Litigation Practice</h2>
-	<div class="practice_list">
+	
 	<?php foreach($practices as $row2):?>
+	<div id="menu_block">
 	<a href="<?=base_url()?>practices/view/<?=$row2['practice_id'];?>"><?=$row2['practice_title'];?></a><br/>
-
+	</div>	
 	<?php endforeach;
 	?>
-	</div>	
+	
 	</div>
 	
 	
-	<div class="rightside">
+	<div id="right_body">
 	<h2>Transaction Practice</h2>
-	<div class="practice_list">
+	
 	<?php foreach($practices2 as $row2):?>
+	<div id="menu_block">
 	<a href="<?=base_url()?>practices/view/<?=$row2['practice_id'];?>"><?=$row2['practice_title'];?></a><br/>
-
+	</div>
 	<?php endforeach;
 	?>	
-	</div>	
+		
 	</div>
 
 
