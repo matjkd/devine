@@ -21,19 +21,26 @@
 
 
 <?php endforeach;
+
 ?>
 <div id='profilesort'> 
-<?php foreach($professionals as $row1):?>
+<?php 
 
-<div id='profilelist'><a href="<?=base_url()?>professionals/view_profile/<?=$row1['professional_id'];?>">
-<img src="<?=base_url()?>images/profiles/<?=$row1['image_location'];?>"></a>
-	<div id='profiletext'>
-	<strong><?=$row1['display_name'];?></strong><br/>
-	<?=$row1['title'];?><br/>
-	<a href="mailto:<?=$row1['email'];?>"><?=$row1['email'];?></a><br/><br/>
-	<a href="<?=base_url()?>professionals/view_profile/<?=$row1['professional_id'];?>">View Bio</a>
-	</div>
+foreach($professionals as $row1):?>
+
+<?php ?>
+<div id="left_body">
+<div id="menu_block">
+
+<a href="<?=base_url()?>professionals/view_profile/<?=$row1['professional_id'];?>">
+	<strong><?=$row1['display_name'];?></strong> - 
+	<?=$row1['title'];?></a><br/>
+	<a href="mailto:<?=$row1['email'];?>"><?=$row1['email'];?></a> - 
+	
+	
 </div>
+</div>
+
 
 <?php endforeach;
 ?>

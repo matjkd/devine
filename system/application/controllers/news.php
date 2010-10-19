@@ -4,7 +4,7 @@ class News extends MY_Controller {
 
 	function News()
 	{
-		parent::Controller();
+		parent::MY_Controller();
 		
 			
 	}

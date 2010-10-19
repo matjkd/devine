@@ -6,6 +6,7 @@ function list_news()
 		{
 			$data = array();
 			$this->db->where('page_type', 1);
+			$this->db->order_by('date_added', 'desc');
 			$query = $this->db->get('news');
 			if ($query->num_rows() > 0)
 			{
@@ -40,7 +41,7 @@ function get_news($id)
 			
     				$content_update = array(
     				'news_content' => $this->input->post('content'),
-    				
+    				'date_added' => $this->input->post('date_added'),
     				'news_title' => $this->input->post('title')
     				);
 					
@@ -51,6 +52,7 @@ function get_news($id)
 		$update = $this->db->update('news', $content_update);
 		return $update;
 		}
+		
 function SaveForm($form_data)
 	{
 		$this->db->insert('news', $form_data);

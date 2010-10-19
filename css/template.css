@@ -278,16 +278,16 @@ text-align: left;
 Profiles
 */
 #profilelist {
-	color: #ffffff;
-	width:314px;
+	color: #333333;
+	width:334px;
 	float:left;
 	margin:5px;
 	padding:0px;
 	height:100px;
-	background: #276087;
+	
 }
 #profilelist a {
-	color: #ffffff;
+	color: #000000;
 }
 #profilelist img {
 	margin-right:5px;

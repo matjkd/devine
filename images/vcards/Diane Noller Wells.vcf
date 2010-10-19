@@ -1,0 +1,19 @@
+BEGIN:VCARD
+VERSION:2.1
+N:Wells;Diane;Noller
+FN:Diane Noller Wells
+ORG:Devine Goodman Rasco & Wells, P.A.
+TITLE:Shareholder
+NOTE;ENCODING=QUOTED-PRINTABLE:Office Address:=0D=0A=0D=0A540 Biltmore Way=0D=0ACoral Gables, FL  33131=0D=
+=0A
+TEL;WORK;VOICE:(305) 444-6695
+TEL;WORK;VOICE:(305) 374-8200
+TEL;CELL;VOICE:(305) 987-3337
+TEL;WORK;FAX:(305) 374-8208
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;777 Brickell Avenue=0D=0ASuite 850;Miami;FL;33131;United States of America
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:777 Brickell Avenue=0D=0ASuite 850=0D=0AMiami, FL 33131=0D=0AUnited States o=
+f America
+URL;WORK:http://www.devinegoodman.com
+EMAIL;PREF;INTERNET:dwells@devinegoodman.com
+REV:20090423T145430Z
+END:VCARD
