@@ -48,22 +48,27 @@
 
 <div class="mainbody">
 
-<div class="left_col">
+
 
 	<?php 
 	
 	if(!isset($sidebar))
 		{
-		
+		?>
+		<div class="content" style="width:940px;">
+		<?php 
 		}
 	else
 		{
-			$this->load->view($sidebar);	
+			?><div class="left_col">
+			<?php $this->load->view($sidebar);?>	
+			</div>	
+			<div class="content">
+			<?php 
 		} 
 	?>
-</div>	
 
-<div class="content">
+
 
 <?php 
 

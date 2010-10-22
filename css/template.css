@@ -5,6 +5,7 @@ body {
 	font: 12px/1.2 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
 	color:#6f6f6f;
 	height:100%;
+	line-height: 1.5em;
 }
 h1 {
 	color: #13527d;

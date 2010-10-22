@@ -4,7 +4,7 @@
     <ul class="menu">
         <li <?php if($menu['menu_category']=='1'){echo "class='current'";}?> ><a href="<?=base_url()?>" class="parent"><span id="menuarrow">Home</span></a></li>
         
-        <li <?php if($menu['menu_category']=='2'){echo "class='current'";}?>><a href="<?=base_url()?>welcome/content/firm" class="parent"><span id="menuarrow">About Us
+        <li <?php if($menu['menu_category']=='2'){echo "class='current'";}?>><a href="<?=base_url()?>welcome/content/aboutus" class="parent"><span id="menuarrow">About Us
          
           <li <?php if($menu['menu_category']=='3'){echo "class='current'";}?>><a href="<?=base_url()?>practices"><span>Practices</span></a>
         	       
@@ -14,9 +14,9 @@
         </li> 
         
          
-        <li <?php if($menu['menu_category']=='5'){echo "class='current'";}?>><a href="<?=base_url()?>welcome/content/firm_news"><span>News</span></a>
+        <li <?php if($menu['menu_category']=='5'){echo "class='current'";}?>><a href="<?=base_url()?>news"><span>News</span></a>
         	<ul>
-        	<li><a href="<?=base_url()?>news"><span>News</span></a></li>
+        	
         	<li><a href="<?=base_url()?>cases"><span>Selected Cases</span></a></li>
         	</ul>       
         </li> 

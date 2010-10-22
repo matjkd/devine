@@ -1,14 +1,14 @@
 
 <?php foreach($content as $row):?>
 
-<img src="<?=base_url()?>images/headings/<?=$row['menu_title'];?>.png">
+<h1><?=$row['title'];?>
 <?php if(isset($edit))
 {
 	echo " - <a href='$edit'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/edit_page.png'></a>";
 }
 
 ?>
-
+</h1>
 <p>
 <?=$row['content'];?>
 </p>
@@ -23,7 +23,9 @@
 	
 	<?php foreach($practices as $row2):?>
 	<div id="menu_block">
-	<a href="<?=base_url()?>practices/view/<?=$row2['practice_id'];?>"><?=$row2['practice_title'];?></a><br/>
+		<a href="<?=base_url()?>practices/view/<?=$row2['practice_id'];?>">
+			<?=$row2['practice_title'];?>
+		</a><br/>
 	</div>	
 	<?php endforeach;
 	?>
@@ -36,11 +38,14 @@
 	
 	<?php foreach($practices2 as $row2):?>
 	<div id="menu_block">
-	<a href="<?=base_url()?>practices/view/<?=$row2['practice_id'];?>"><?=$row2['practice_title'];?></a><br/>
+		<a href="<?=base_url()?>practices/view/<?=$row2['practice_id'];?>">
+			<?=$row2['practice_title'];?>
+		</a><br/>
 	</div>
 	<?php endforeach;
 	?>	
 		
 	</div>
 
-
+<div style="clear:both"></div>
+<p><a href="<?=base_url()?>cases">Click here for sampling of repeated cases.</a></p>

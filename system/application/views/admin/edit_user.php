@@ -1,11 +1,6 @@
 <script type="text/javascript">
-tinyMCE.init({
-	mode : "textareas",
-	theme : "advanced"
-	
-
-		
-	
+jQuery(function() {
+    jQuery('.wymeditor').wymeditor();
 });
 </script>
 
@@ -21,9 +16,9 @@ tinyMCE.init({
 <div class="form_label">Lastname:</div><?=form_input('lastname', $row['lastname'])?><br/>
 <br/>
 <div class="form_label">Title:</div> <?=form_input('title', $row['title'])?>
-<textarea cols=75 rows=20 name="content" id="content"><?=$row['bio'];?></textarea>
+<textarea cols=75 rows=20 name="content" id="content"  class='wymeditor'><?=$row['bio'];?></textarea>
 
-<?php echo form_submit('submit', 'Submit'); ?>
+<input type="submit" class="wymupdate" />
 <?=form_close()?> 
 <?php endforeach;
 ?>
