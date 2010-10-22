@@ -2,9 +2,9 @@
 
 class Welcome extends MY_Controller {
 
-	function Welcome()
+	function __Construct()
 	{
-		parent::Controller();
+		parent::__Construct();
 			
 	}
 	

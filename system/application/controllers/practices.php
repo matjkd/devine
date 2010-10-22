@@ -2,9 +2,9 @@
 
 class Practices extends MY_Controller {
 
-	function Practices()
+	function __Construct()
 	{
-		parent::Controller();
+		parent::__Construct();
 		$this->load->model('practice_model');
 			
 	}

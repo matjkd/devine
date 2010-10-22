@@ -37,9 +37,9 @@
 	</div>
 	
 	<div id="menu_block">
-		<a href="<?=base_url()?>welcome/content/resources">
-		<strong>Resources</strong>
-		Websites of interest
+		<a href="<?=base_url()?>welcome/content/laworld">
+		<strong>LAWorld</strong>
+		International Legal Network
 		</a>
 	</div>
 	

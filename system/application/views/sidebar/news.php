@@ -1,15 +1,3 @@
-<script type="text/javascript"> 
-$(function() {
-    // run the code in the markup!
-	$('#slnews').cycle({ 
-	    fx: 'fade', 
-	    speed:    500, 
-	    timeout:  10000  
-	});
-    
-});
-</script>
-
 <h1>Latest News</h1>
 
 
@@ -24,10 +12,11 @@ $(function() {
 <?php
 
 $shortnews = substr($news['news_content'], 0, 300);
+$shortnews = strip_tags($shortnews);
 echo $shortnews;
 echo "<br/><br/>";
 ?>
-<a href="<?=base_url()?>news/view">Read More...</a>
+<a href="<?=base_url()?>news/view_item/<?=$news['news_id']?>">Read More...</a>
 
 <br/>
 </div>

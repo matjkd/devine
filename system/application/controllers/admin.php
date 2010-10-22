@@ -2,9 +2,9 @@
 
 class Admin extends My_Controller {
 
-	function Admin()
+	function __Construct()
 	{
-		parent::Controller();
+		parent::__Construct();
 		$this->load->library(array('encrypt', 'form_validation'));	
 		$this->is_logged_in();
 		$this->load->model('professionals_model');

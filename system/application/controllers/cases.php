@@ -2,9 +2,9 @@
 
 class Cases extends MY_Controller {
 
-	function Cases()
+	function __Construct()
 	{
-		parent::Controller();
+		parent::__Construct();
 		$this->load->model('cases_model');
 			
 	}

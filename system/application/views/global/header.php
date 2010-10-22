@@ -1,11 +1,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="robots" content="index, follow" /> 
-<meta name="keywords" content="Jubilee Friends, Pre School" /> 
-<meta name="title" content="Jubilee Friends Pre School" /> 
+<meta name="keywords" content="Devine Goodman Rascoe and Wells, lawyers, florida, wlrn" /> 
+<meta name="title" content="Devine Goodman Rascoe and Wells" /> 
 <meta name="author" content="Redstudio Design Limited" /> 
-<meta name="description" content="Jubilee Friends Pre School" /> 
- <meta name="google-site-verification" content="9R-L-X5QA8Kmal_Myd29X7XY9SvXoLGCgW37NYHdWIU" /> 
+<meta name="description" content="Devine Goodman Rascoe and Wells, P.A." /> 
+<meta name="google-site-verification" content="9R-L-X5QA8Kmal_Myd29X7XY9SvXoLGCgW37NYHdWIU" /> 
 <link rel='stylesheet' href='<?=base_url()?>css/template.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/custom-theme/jquery-ui-1.8.2.custom.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/menu.css' type='text/css' />
@@ -18,6 +18,9 @@
 <script src="<?=base_url()?>js/sliding_effect.js" type="text/javascript"></script>	
 <script src="<?=base_url()?>js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/jquery.cycle.all.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>js/global/sl_settings.js" type="text/javascript"></script>
+<script src="<?=base_url()?>js/menu.js" type="text/javascript"></script>
+
 <script src="<?=base_url()?>js/menu.js" type="text/javascript"></script>
 
 <!--[if lt IE 7.]>

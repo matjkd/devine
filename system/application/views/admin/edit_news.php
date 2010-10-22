@@ -1,6 +1,12 @@
 <script type="text/javascript">
 jQuery(function() {
-    jQuery('.wymeditor').wymeditor();
+	jQuery('.wymeditor').wymeditor({
+	    
+      
+        stylesheet: 'styles.css',
+        skin: 'silver'
+        
+    });
 });
 
 $(function() {

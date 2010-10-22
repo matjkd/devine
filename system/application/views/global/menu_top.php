@@ -20,7 +20,7 @@
         	<li><a href="<?=base_url()?>cases"><span>Selected Cases</span></a></li>
         	</ul>       
         </li> 
-         <li <?php if($menu['menu_category']=='6'){echo "class='current'";}?>><a href="<?=base_url()?>welcome/content/laworld"><span>LAWorld</span></a>
+         <li <?php if($menu['menu_category']=='10'){echo "class='current'";}?>><a href="<?=base_url()?>welcome/content/laworld"><span>LAWorld</span></a>
         	       
         </li>
          

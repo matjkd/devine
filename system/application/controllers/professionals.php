@@ -2,9 +2,9 @@
 
 class Professionals extends MY_Controller {
 
-	function Professionals()
+function __Construct()
 	{
-		parent::Controller();
+		parent::__Construct();
 		$this->load->model('professionals_model');
 			
 	}

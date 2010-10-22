@@ -1,6 +1,6 @@
 <?php foreach($content as $row):?>
 
-<img src="<?=base_url()?>images/headings/<?=$row['menu_title'];?>.png">
+<h1><?=$row['title'];?>
 <?php 
 
 if(isset($create_news))
@@ -8,7 +8,7 @@ if(isset($create_news))
 	echo " - <a href='$create_news'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/add.png'></a>";
 }
 ?>
-
+</h1>
 
 
 
