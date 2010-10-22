@@ -7,7 +7,7 @@ jQuery(function() {
 
 <?php foreach($content as $row):?>
 
-<img src="<?=base_url()?>images/headings/<?=$row['menu_title'];?>.png">
+<h1><?=$row['title'];?></h1>
 <?php  $id = $row['content_id'];?>
 
 

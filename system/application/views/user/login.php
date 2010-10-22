@@ -7,7 +7,7 @@ if(!isset($is_logged_in) || $is_logged_in != true)
 		{
 			
 			?>
-			<a href='<?=base_url()?>welcome/login' style="color:#dddddd">Login</a>
+			<a href='<?=base_url()?>welcome/login'>Login</a>
 	<?php 
 			
 		}	
@@ -21,7 +21,7 @@ if(!isset($is_logged_in) || $is_logged_in != true)
 				echo ' | ';?>
 				 
 				 
-				<a href='<?=base_url()?>user/login/logout' style="color:#dddddd">Logout</a>
+				<a href='<?=base_url()?>user/login/logout' >Logout</a>
 				
 			
 				<?php 

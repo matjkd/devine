@@ -89,7 +89,7 @@ if(isset($main))
 	
 </div>
 <div class="footer">
-<?php  $this->load->view('global/footer'); ?> 	<?php $this->load->view('user/login'); ?>	</div>
+<?php  $this->load->view('global/footer'); ?> 	</div>
 
 
 </body>

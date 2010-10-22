@@ -1,8 +1,8 @@
 <?php foreach($content as $row):?>
 
-<img alt="<?=$row['menu_title'];?>" src="<?=base_url()?>images/headings/<?=$row['menu_title'];?>.png">
+<h1><?=$row['title'];?></h1>
 <?php endforeach; ?>
-<br/><br/>
+
 <div style="float:left; width:200px; padding-right:10px;">
 Our offices are located on the eighth floor, 777 Brickell Avenue; at the corner of 8th Street and Brickell Avenue.
 <p>777 Brickell Avenue&nbsp;<br />Suite 850&nbsp;<br />Miami, Florida 33131&nbsp;<br /><br />P 305.374.8200&nbsp;<br />F 305.374.8208&nbsp;<br />E&nbsp;<a href="mailto:info@devinegoodman.com">info@devinegoodman.com</a></p>

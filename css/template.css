@@ -200,8 +200,8 @@ text-align: left;
 	height: 60px;
 	background: transparent;
 	margin:0px;
-	padding:20px 20px 20px 20px;
-	width:920px;
+	padding:20px 0px 20px 0px;
+	width:960px;
 	display:block;
 	border-top:solid 1px #4d4d4d;
 }
@@ -402,4 +402,13 @@ Profiles
 	width:340px;
 	
 }
-
+#menu_footer ul{
+	list-style-type:circle;
+	padding-left: 0;
+margin-left: 0;
+}
+#menu_footer li{
+	margin-right: 5px;
+	display:inline;
+	
+}
