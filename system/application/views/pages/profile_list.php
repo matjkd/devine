@@ -33,7 +33,7 @@ foreach($professionals as $row1):?>
 <div id="menu_block">
 
 <a href="<?=base_url()?>professionals/view_profile/<?=$row1['professional_id'];?>">
-	<strong><?=$row1['display_name'];?></strong> - 
+	<strong><?=$row1['firstname'];?> <?=$row1['middlename'];?>. <?=$row1['lastname'];?></strong> - 
 	<?=$row1['title'];?></a><br/>
 	<a href="mailto:<?=$row1['email'];?>"><?=$row1['email'];?></a> - 
 	

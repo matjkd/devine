@@ -3,7 +3,11 @@
 
 
 
-<?php foreach($news as $news):?>
+<?php foreach($news as $news):
+
+$old_date_added = strtotime($news['date_added']);
+$new_date_added = date('Y - F', $old_date_added);
+?>
 <h1>
 <?=$news['news_title'];?> <?php if(isset($edit))
 {
@@ -11,7 +15,7 @@
 }
 ?>
 </h1>
-<div class="news_date"><?php echo substr($news['date_added'], 0, 17 ); ?>, Added by <?=$news['added_by'];?></div>
+<div class="news_date"><?php echo $new_date_added; ?> </div>
 
 
 <?=$news['news_content'];?>

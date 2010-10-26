@@ -48,4 +48,4 @@
 	</div>
 
 <div style="clear:both"></div>
-<p><a href="<?=base_url()?>cases">Click here for sampling of repeated cases.</a></p>
+<p><a href="<?=base_url()?>cases">Click here for sampling of reported cases.</a></p>

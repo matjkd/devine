@@ -20,9 +20,18 @@ Email: <a href="mailto:<?=$profile['email'];?>"><?=$profile['email'];?></a><br/>
 <?php endforeach; ?>
 <br/>
 <hr>
+<?php if($cases == NULL)
+{
+	
+}
+else
+{
+?>
 <h3>Selected Cases</h3>
 <table>
-<?php foreach($cases as $case):?>
+
+<?php 
+foreach($cases as $case):?>
 
 <tr style="padding-bottom:3px;">
 <td><img src="<?=base_url()?>images/pdf.png" width="28px"></td>
@@ -30,4 +39,6 @@ Email: <a href="mailto:<?=$profile['email'];?>"><?=$profile['email'];?></a><br/>
 </tr>
 
 <?php endforeach;?>
+
 </table>
+<?php } ?>
