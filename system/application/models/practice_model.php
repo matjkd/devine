@@ -6,6 +6,9 @@ function get_practices($id)
 		{
 			$data = array();
 			$this->db->where('practice_parent', $id);
+			$this->db->where('active', 1);
+			$this->db->order_by('order', 'asc');
+			
 			$query = $this->db->get('practices');
 			if ($query->num_rows() > 0)
 			{
@@ -22,6 +25,7 @@ function get_practices($id)
 		{
 			$data = array();
 			$this->db->where('practice_id', $id);
+			$this->db->where('active', 1);
 			$query = $this->db->get('practices');
 			if ($query->num_rows() > 0)
 			{

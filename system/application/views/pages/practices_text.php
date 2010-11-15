@@ -1,6 +1,6 @@
 <div id="left_body">
 	<div id="menu_block">
-		<a href="<?=base_url()?>welcome/content/firm">
+		<a href="<?=base_url()?>welcome/content/aboutus">
 		<strong>About Us</strong>
 		
 		</a>

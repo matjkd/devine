@@ -29,17 +29,17 @@
 foreach($professionals as $row1):?>
 
 <?php ?>
-<div id="left_body">
-<div id="menu_block">
+
+<div id="people_list">
 
 <a href="<?=base_url()?>professionals/view_profile/<?=$row1['professional_id'];?>">
 	<strong><?=$row1['firstname'];?> <?=$row1['middlename'];?>. <?=$row1['lastname'];?></strong> - 
-	<?=$row1['title'];?></a><br/>
-	<a href="mailto:<?=$row1['email'];?>"><?=$row1['email'];?></a> - 
+	<?=$row1['title'];?></a> - 
+	<a href="mailto:<?=$row1['email'];?>"><?=$row1['email'];?></a> 
 	
 	
 </div>
-</div>
+
 
 
 <?php endforeach;

@@ -85,9 +85,18 @@ function editpro()
 		$data['page'] ='professionals';
 		$data['content'] =	$this->content_model->get_content('news');
 		$data['professional'] = $this->professionals_model->get_professional($id);
+				foreach($data['professional'] as $row):
+			
+				$data['practice'] = $this->professionals_model->practice_areas();
+				$data['professional_id'] = $id;
+			endforeach;
+		
 		$data['news'] = $this->news_model->list_news();
 		$data['main'] = "admin/edit_user";
 		$data['menu'] =	$this->content_model->get_menus();
+		
+		$data['assigned_practices'] = $this->professionals_model->assigned_practice_areas($id);
+		
 		$this->load->vars($data);
 		$this->load->view('template');
 	}
@@ -181,6 +190,31 @@ function submit_news()
 	
 		$this->load->vars($data);
 		$this->load->view('template');
+	}
+	function assign_practice()
+	{
+	$segment_active = $this->uri->segment(3);
+		if($segment_active==NULL)
+		{
+			redirect('welcome', 'refresh');
+		}
+		else
+		{
+			$this->professionals_model->assign_practice($segment_active);
+			
+			redirect('admin/editpro/'.$segment_active.'');   
+		}
+	}
+function delete_assigned_practice($id)
+	{
+	
+		$data['practice_id'] = $this->professionals_model->delete_assigned_practice($id);
+		foreach($data['practice_id'] as $key => $row):
+		$professional = $row['professional_id'];
+		endforeach;
+		
+		redirect('admin/editpro/'.$professional.'', 'refresh');
+		
 	}
 	function do_upload()
 	{

@@ -305,7 +305,7 @@ Profiles
 	font-weight:bold;
 	width:100px;
 	background-color:#acb5bf;
-	padding:5px;
+	padding:3px;
 	color:#ffffff;
 }
 /*shadow*/
@@ -387,6 +387,14 @@ Profiles
 	background: transparent;
 	padding: 3px;
 	border-bottom: 1px solid  #999999;
+}
+#people_list {
+	background: transparent;
+	padding: 3px;
+	border-bottom: 1px solid  #999999;
+}
+#people_list:hover {
+	background: #dddddd;
 }
 #menu_block:hover {
 	background: #dddddd;
