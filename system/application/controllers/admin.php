@@ -83,7 +83,7 @@ function editpro()
 		
 		$id = $this->uri->segment(3);
 		$data['page'] ='professionals';
-		$data['content'] =	$this->content_model->get_content('news');
+		$data['content'] =	$this->content_model->get_content('professionals');
 		$data['professional'] = $this->professionals_model->get_professional($id);
 				foreach($data['professional'] as $row):
 			
