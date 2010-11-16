@@ -8,6 +8,8 @@
 <meta name="google-site-verification" content="9R-L-X5QA8Kmal_Myd29X7XY9SvXoLGCgW37NYHdWIU" /> 
 <link rel='stylesheet' href='<?=base_url()?>css/template.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/custom-theme/jquery-ui-1.8.2.custom.css' type='text/css' />
+<link rel='stylesheet' href='<?=base_url()?>css/custom-theme/demo_table.css' type='text/css' />
+<link rel='stylesheet' href='<?=base_url()?>css/custom-theme/demo_table_jui.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/menu.css' type='text/css' />
 <!--[if IE 7]>
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>css/ie.css" />
@@ -20,8 +22,9 @@
 <script src="<?=base_url()?>js/jquery.cycle.all.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/global/sl_settings.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/menu.js" type="text/javascript"></script>
-
 <script src="<?=base_url()?>js/menu.js" type="text/javascript"></script>
+
+<script src="<?=base_url()?>js/jquery.dataTables.min.js" type="text/javascript"></script>
 
 <!--[if lt IE 7.]>
 <script defer type="text/javascript" src="<?=base_url()?>js/pngfix.js"></script>

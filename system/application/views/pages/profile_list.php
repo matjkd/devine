@@ -1,10 +1,28 @@
 <script type="text/javascript">
-	$(function() {
-		$("#profilesort").sortable();
-		$("#profilesort").disableSelection();
-	});
-	</script>
+	
 
+	$(document).ready(function() {
+		$('#example').dataTable({
+			"bAutoWidth":false,
+			"bPaginate": false,
+			"bLengthChange": false,
+			"bFilter": false,
+			"bSort": false,
+			"bInfo": false,
+			"aaSorting": [[ 0, "asc" ]],
+			"aoColumns": [
+				 { "bVisible":    false },
+				null,
+				null,
+				null
+				
+			]
+		});
+	} );
+	</script>
+<style>
+table { clear: both }
+</style>
 <?php foreach($content as $row):?>
 
 <h1><?=$row['title'];?>
@@ -23,25 +41,43 @@
 <?php endforeach;
 
 ?>
-<div id='profilesort'> 
+ 
+<Table id="example">
+<thead>
+<th style="width:150px;">Sort</th>
+<th style="width:150px;">Name</th>
+<th style="width:150px;">Title</th>
+<th style="width:150px;">Email Address</th>
+</thead>
+<tbody>
 <?php 
 
 foreach($professionals as $row1):?>
 
 <?php ?>
 
-<div id="people_list">
 
-<a href="<?=base_url()?>professionals/view_profile/<?=$row1['professional_id'];?>">
-	<strong><?=$row1['firstname'];?> <?=$row1['middlename'];?>. <?=$row1['lastname'];?></strong> - 
-	<?=$row1['title'];?></a> - 
+<tr id="people_list">
+	<td>
+	<?=$row1['lastname'];?>
+	</td>
+	<td>
+	<a href="<?=base_url()?>professionals/view_profile/<?=$row1['professional_id'];?>">
+	<strong><?=$row1['firstname'];?> <?=$row1['middlename'];?>. <?=$row1['lastname'];?></strong> </a>
+	</td>
+	
+	<td>
+	<?=$row1['title'];?>
+	</td>
+	
+	<td>
 	<a href="mailto:<?=$row1['email'];?>"><?=$row1['email'];?></a> 
-	
-	
-</div>
+	</td>
 
+</tr>
 
 
 <?php endforeach;
 ?>
-</div>
+</tbody>
+</Table>
