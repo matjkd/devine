@@ -7,6 +7,9 @@ body {
 	height:100%;
 	line-height: 1.5em;
 }
+th {
+	text-align: left;
+}
 h1 {
 	color: #13527d;
 	margin-top:0px;
@@ -509,4 +512,7 @@ table.searchintro td {
 }
 iframe {
 border: 0px inset;
+}
+.dataTables_wrapper {
+	min-height: 100px;
 }

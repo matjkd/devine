@@ -6,10 +6,11 @@
 <meta name="author" content="Redstudio Design Limited" /> 
 <meta name="description" content="Devine Goodman Rascoe and Wells, P.A." /> 
 <meta name="google-site-verification" content="9R-L-X5QA8Kmal_Myd29X7XY9SvXoLGCgW37NYHdWIU" /> 
-<link rel='stylesheet' href='<?=base_url()?>css/template.css' type='text/css' />
+
 <link rel='stylesheet' href='<?=base_url()?>css/custom-theme/jquery-ui-1.8.2.custom.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/custom-theme/demo_table.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/custom-theme/demo_table_jui.css' type='text/css' />
+<link rel='stylesheet' href='<?=base_url()?>css/template.css' type='text/css' />
 <link rel='stylesheet' href='<?=base_url()?>css/menu.css' type='text/css' />
 <!--[if IE 7]>
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>css/ie.css" />
