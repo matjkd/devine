@@ -63,7 +63,7 @@
 			?><div class="left_col">
 			<?php $this->load->view($sidebar);?>	
 			</div>	
-			<div class="content">
+			<div class="<?php if(isset($rightcolumn)){echo "content3";} else {echo "content";}?>">
 			<?php 
 		} 
 	?>
@@ -79,6 +79,11 @@ if(isset($main))
 ?>	
 
 </div>
+<?php if(isset($rightcolumn)){ ?>
+<div class="right_col">
+<?php  $this->load->view($rightcolumn); ?>
+</div>
+<?php } ?>
 </div>	
 
 

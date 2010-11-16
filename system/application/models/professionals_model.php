@@ -60,7 +60,9 @@ function edit_pro($id)
     				'middlename' => $this->input->post('middlename'),
     				'lastname' => $this->input->post('lastname'),
     				'title' => $this->input->post('title'),
-    				'bio' => $this->input->post('content')
+    				'bio' => $this->input->post('content'),
+    				'education' => $this->input->post('education'),
+    				'admissions' => $this->input->post('admissions')
     				
     				);
 					

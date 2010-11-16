@@ -1,25 +1,15 @@
-<?php foreach($professional as $profile):?>
+<h1>Biography
+<?php foreach($professional as $profile):
+{
+	echo " - <a href='".base_url()."admin/editpro/".$profile['professional_id']."'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/edit_page.png'></a>";
+}
+?>
+</h1>
 
-<img src="<?=base_url()?>images/profiles/<?=$profile['image_location'];?>">
-<br/>
-
-<div style="float:left;">
-<a target="_blank" href="<?=base_url()?>images/vcards/<?=$profile['vcard'];?>"><img src="<?=base_url()?>images/vcards/vcard.png"></a>
-</div>
-		
-<div style="float:left; padding:8px 0 0 4px;">
-		<strong><?=$profile['firstname'];?> <?=$profile['middlename'];?> <?=$profile['lastname'];?></strong><br/>
-<?=$profile['title'];?>
-
-</div>
-		
-<div style="clear:both;"></div>
-<br/>
-Email: <a href="mailto:<?=$profile['email'];?>"><?=$profile['email'];?></a><br/>
 
 <?php endforeach; ?>
 <br/>
-<hr>
+
 <?php if($cases == NULL)
 {
 	

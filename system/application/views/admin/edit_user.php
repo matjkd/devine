@@ -23,9 +23,12 @@ jQuery(function() {
 	<div class="form_label">Title:</div> <?=form_input('title', $row['title'])?>
 </div>
 <div style="clear:both;"></div>
-
+bio:
 <textarea cols=75 rows=20 name="content" id="content"  class='wymeditor'><?=$row['bio'];?></textarea>
-
+Education
+<textarea cols=75 rows=20 name="education" id="education"  class='wymeditor'><?=$row['education'];?></textarea>
+Admissions
+<textarea cols=75 rows=20 name="admissions" id="admissions"  class='wymeditor'><?=$row['admissions'];?></textarea>
 <input type="submit" class="wymupdate" />
 <?=form_close()?> 
 <?php endforeach;

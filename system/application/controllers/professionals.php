@@ -51,6 +51,7 @@ function view_profile($profile_id)
 		$data['professional'] = $this->professionals_model->get_professional($profile_id);
 		$data['menu'] =	$this->content_model->get_menus();
 		$data['main'] = "pages/profile";
+		$data['rightcolumn'] = "sidebar/right_profile";
 		$data['page'] = $id;
 		$data['cases'] = $this->professionals_model->get_cases($profile_id);
 		$data['sidebar'] = "sidebar/profile";
@@ -63,7 +64,7 @@ function view_profile($profile_id)
 			
                        
 			
-		
+		$data['assigned_practices'] = $this->professionals_model->assigned_practice_areas($profile_id);
 		$this->load->vars($data);
 		$this->load->view('template');
 	}
