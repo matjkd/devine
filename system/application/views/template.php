@@ -56,7 +56,7 @@
 		{
 			if(isset($rightcolumn))
 			{?>
-			<div class="content" style="width:600px;">
+			<div class="content" style="width:600px; padding-left:0px; padding-right:20px;">
 			<?php 
 			}
 			else
