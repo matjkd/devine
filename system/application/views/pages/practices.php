@@ -19,12 +19,12 @@
 
 
 	<div id="left_body">
-	<h2>Litigation Practice</h2>
+	<h2><a href="<?=base_url()?>professionals/practice/55">Litigation Practice</a></h2>
 	
 	<?php foreach($practices as $row2):?>
 	<div id="menu_block">
 	
-			<?=$row2['practice_title'];?>
+			<a href="<?=base_url()?>professionals/practice/<?=$row2['practice_id'];?>"><?=$row2['practice_title'];?></a>
 		<br/>
 	</div>	
 	<?php endforeach;
@@ -34,12 +34,12 @@
 	
 	
 	<div id="right_body">
-	<h2>Transaction Practice</h2>
+	<h2><a href="<?=base_url()?>professionals/practice/54">Transaction Practice</a></h2>
 	
 	<?php foreach($practices2 as $row2):?>
 	<div id="menu_block">
 		
-			<?=$row2['practice_title'];?>
+			<a href="<?=base_url()?>professionals/practice/<?=$row2['practice_id'];?>"><?=$row2['practice_title'];?></a>
 		<br/>
 	</div>
 	<?php endforeach;

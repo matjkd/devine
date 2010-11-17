@@ -17,12 +17,13 @@ function view()
 		
 		if(($this->uri->segment(3))==NULL)
 			{
-				$id = "professionals";
+				
 			}
 		else
 			{
-				$id = $this->uri->segment(3);
+				$type = $this->uri->segment(3);
 			}
+		$id = "professionals";
 		$data['content'] =	$this->content_model->get_content($id);
 		$data['professionals'] = $this->professionals_model->get_professionals();
 		$data['news'] = $this->news_model->list_news();
@@ -54,7 +55,7 @@ function view_profile($profile_id)
 		$data['rightcolumn'] = "sidebar/right_profile";
 		$data['page'] = $id;
 		$data['cases'] = $this->professionals_model->get_cases($profile_id);
-		$data['sidebar'] = "sidebar/profile";
+		$data['b'] = "sidebar/profile";
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		
 		if($is_logged_in!=NULL)
@@ -65,6 +66,41 @@ function view_profile($profile_id)
                        
 			
 		$data['assigned_practices'] = $this->professionals_model->assigned_practice_areas($profile_id);
+		$this->load->vars($data);
+		$this->load->view('template');
+	}
+	
+function practice($practice_id)
+	{
+		$this->load->model('practice_model');	
+		if(($this->uri->segment(3))==NULL)
+			{
+				
+			}
+		else
+			{
+				$type = $this->uri->segment(3);
+			}
+		$id = "professionals";
+		$data['content'] =	$this->content_model->get_content($id);
+		$data['professionals'] = $this->professionals_model->get_professional_practice($practice_id);
+		$data['practice'] = $this->practice_model->get_practice($practice_id);
+		$data['news'] = $this->news_model->list_news();
+		$data['menu'] =	$this->content_model->get_menus();
+		$data['slideshow'] = "global/slideshowpro";
+		$data['sidebar'] = 'sidebar/news';
+		$data['main'] = "pages/profile_list";
+		$data['page'] = $id;
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		
+		if($is_logged_in!=NULL)
+			{
+			$data['edit'] = site_url("admin/edit/$id");
+	        }
+			
+                       
+			
+		
 		$this->load->vars($data);
 		$this->load->view('template');
 	}

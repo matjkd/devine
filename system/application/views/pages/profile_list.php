@@ -23,15 +23,36 @@
 <style>
 table { clear: both }
 </style>
+<?php 
+	if(isset($practice))
+		{
+			foreach($practice as $practice):
+			
+			$practice_title = $practice['practice_title'];
+		
+			endforeach;
+		}
+?>
+
 <?php foreach($content as $row):?>
 
-<h1><?=$row['title'];?>
-<?php if(isset($edit))
-{
-	echo " - <a href='$edit'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/edit_page.png'></a>";
-}
-
-?>
+<h1>
+	<?php 
+		if(isset($practice_title))
+			{
+				echo $practice_title;
+			}
+			else
+			{	
+				echo $row['title'];
+			}
+	 
+		if(isset($edit))
+			{
+				echo " - <a href='$edit'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/edit_page.png'></a>";
+			}
+	
+	?>
 </h1>
 <p>
 <?=$row['content'];?>
@@ -67,7 +88,7 @@ foreach($professionals as $row1):?>
 	</td>
 	
 	<td>
-	<?=$row1['title'];?>
+	<?=$row1['title'];?> 
 	</td>
 	
 	<td>

@@ -34,6 +34,24 @@ function get_professional($id)
 		
 		return $data;
 		}
+function get_professional_practice($id)
+		{
+			$data = array();
+			$this->db->orderby('lastname', 'asc');
+			$this->db->join('professionals', 'practice_area_links.professional_id = professionals.professional_id', 'left');
+			$this->db->where('practice_area_links.practice_area_id', $id);
+			$query = $this->db->get('practice_area_links');
+			if ($query->num_rows() > 0)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+		}
 function get_cases($id)
 		{
 			$data = array();
@@ -62,8 +80,8 @@ function edit_pro($id)
     				'title' => $this->input->post('title'),
     				'bio' => $this->input->post('content'),
     				'education' => $this->input->post('education'),
-    				'admissions' => $this->input->post('admissions')
-    				
+    				'admissions' => $this->input->post('admissions'),
+    				'awards' => $this->input->post('awards')
     				);
 					
 		$this->db->where('professional_id', $id);

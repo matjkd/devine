@@ -54,9 +54,16 @@
 	
 	if(!isset($sidebar))
 		{
-		?>
+			if(isset($rightcolumn))
+			{?>
+			<div class="content" style="width:600px;">
+			<?php 
+			}
+			else
+			{
+			?>
 		<div class="content" style="width:940px;">
-		<?php 
+		<?php }
 		}
 	else
 		{

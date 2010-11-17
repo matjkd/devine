@@ -2,11 +2,25 @@
 
 <?php foreach($assigned_practices as $key => $practices):?>
 
+	<?php if($practices['hidden'] == 1) 
+	{
+		
+	} 
+	else
+	{?>
 	<div style="border-bottom:1px #cccccc solid;"><?=$practices['practice_title']?></div>
-
+	<?php
+	 }
+	 ?>
 
 <?php endforeach;?>
 <?php foreach($professional as $right):?>
+
+<?php if(isset($right['awards'])) {?>
+<br/><h2>Awards &amp; Recognitions</h2>
+<?=$right['awards']?>
+<?php }?>
+
 <?php if(isset($right['education'])) {?>
 <br/><h2>Education</h2>
 <?=$right['education']?>
