@@ -21,6 +21,11 @@
 <?=$right['awards']?>
 <?php }?>
 
+<?php if(isset($right['involvement'])) {?>
+<br/><h2>Professional &amp; Community Involvement</h2>
+<?=$right['involvement']?>
+<?php }?>
+
 <?php if(isset($right['education'])) {?>
 <br/><h2>Education</h2>
 <?=$right['education']?>

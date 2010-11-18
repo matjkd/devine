@@ -81,7 +81,8 @@ function edit_pro($id)
     				'bio' => $this->input->post('content'),
     				'education' => $this->input->post('education'),
     				'admissions' => $this->input->post('admissions'),
-    				'awards' => $this->input->post('awards')
+    				'awards' => $this->input->post('awards'),
+    				'involvement' => $this->input->post('involvement')
     				);
 					
 		$this->db->where('professional_id', $id);

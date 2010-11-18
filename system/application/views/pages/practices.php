@@ -24,7 +24,8 @@
 	<?php foreach($practices as $row2):?>
 	<div id="menu_block">
 	
-			<a href="<?=base_url()?>professionals/practice/<?=$row2['practice_id'];?>"><?=$row2['practice_title'];?></a>
+			<?=$row2['practice_title'];?>
+		
 		<br/>
 	</div>	
 	<?php endforeach;
@@ -39,7 +40,8 @@
 	<?php foreach($practices2 as $row2):?>
 	<div id="menu_block">
 		
-			<a href="<?=base_url()?>professionals/practice/<?=$row2['practice_id'];?>"><?=$row2['practice_title'];?></a>
+			<?=$row2['practice_title'];?>
+		
 		<br/>
 	</div>
 	<?php endforeach;

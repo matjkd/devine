@@ -27,6 +27,8 @@ bio:
 <textarea cols=75 rows=20 name="content" id="content"  class='wymeditor'><?=$row['bio'];?></textarea>
 Awards
 <textarea cols=75 rows=20 name="awards" id="awards"  class='wymeditor'><?=$row['awards'];?></textarea>
+Professional Involvement
+<textarea cols=75 rows=20 name="involvement" id="involvement"  class='wymeditor'><?=$row['involvement'];?></textarea>
 Education
 <textarea cols=75 rows=20 name="education" id="education"  class='wymeditor'><?=$row['education'];?></textarea>
 Admissions
