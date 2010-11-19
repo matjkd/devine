@@ -16,23 +16,23 @@
 <?php endforeach;?>
 <?php foreach($professional as $right):?>
 
-<?php if(isset($right['awards'])) {?>
+<?php if($right['awards']!=NULL) {?>
 <br/><h2>Awards &amp; Recognitions</h2>
 <?=$right['awards']?>
 <?php }?>
 
-<?php if(isset($right['involvement'])) {?>
+<?php if($right['involvement']!=NULL) {?>
 <br/><h2>Professional &amp; Community Involvement</h2>
 <?=$right['involvement']?>
 <?php }?>
 
-<?php if(isset($right['education'])) {?>
+<?php if($right['education']!=NULL) {?>
 <br/><h2>Education</h2>
 <?=$right['education']?>
 <?php }?>
 
 
-<?php if(isset($right['admissions'])) {?>
+<?php if($right['admissions']!=NULL) {?>
 <br/><h2>Bar and Court Admissions</h2>
 <?=$right['admissions']?>
 <?php }?>

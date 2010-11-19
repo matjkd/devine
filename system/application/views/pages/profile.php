@@ -10,7 +10,7 @@ endforeach; ?>
 <?php foreach($professional as $row): ?>
 
 
-<div style="float:left; padding:0 5px 5px 0;"><img width="120px" height="120px" src="<?=base_url()?>images/profiles/<?=$row['image_location'];?>"></div>
+<div style="float:left; padding:0 5px 5px 0;"><img width="120px" height="119px" src="<?=base_url()?>images/profiles/<?=$row['image_location'];?>"></div>
 
 		<strong><?=$row['firstname'];?> <?=$row['middlename'];?> <?=$row['lastname'];?></strong><br/>
 <?=$row['title'];?><br/>
