@@ -5,6 +5,7 @@ class Forms extends Controller {
 	function Forms()
 	{
 		parent::Controller();
+		$this->load->model('captcha_model');
 		
 	}
 	
@@ -70,6 +71,11 @@ class Forms extends Controller {
 				$this->load->vars($data);
 				$this->load->view('form_template');
 				}
+	}
+	
+	function captcha_test()
+	{
+		$this->form_validation->set_rules('captcha', 'captcha', 'trim|required');
 	}
 
 	
