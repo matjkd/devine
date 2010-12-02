@@ -130,7 +130,7 @@ width: 960px;
 }
 .mainmenu {
 	
-	background: url(/~dg001/~dg001/css/three_0.gif) repeat-x;
+	background: url(/css/three_0.gif) repeat-x;
 	height: 38px;
 	border-bottom: 0px solid #000000;
 	border-top: 0px solid #cccccc;
@@ -142,7 +142,7 @@ width: 960px;
 	
 }
 .redblocks {
-	background: url(/~dg001/images/main/foot.jpg) repeat #800000;
+	background: url(/images/main/foot.jpg) repeat #800000;
 	height: 14px;
 	
 }
@@ -228,7 +228,7 @@ text-align: left;
 	height:63px;
 	width:960px;
 	margin:20px 0 10px 0px;
-	background: url(/~dg001/images/logo.png) no-repeat;
+	background: url(/images/logo.png) no-repeat;
 }
 .side {
 	width: 470px;
@@ -243,7 +243,7 @@ text-align: left;
 	height: 445px;
 	float:left;
 	padding-left: 0px;
-	background: url(/~dg001/images/main/galleryshadow.gif) repeat-y;
+	background: url(/images/main/galleryshadow.gif) repeat-y;
 }
 
 .redblocks a {
@@ -335,14 +335,14 @@ Profiles
 	border:0px solid #000000;
 	
 	}
-.tl{ height:25px; width:25px; float:left; background: url(/~dg001/~dg001/images/shadow/tl.png); }
-.t{height:25px; width:960px; float:left; background:url(/~dg001/~dg001/images/shadow/t.png);  }
-.tr{height:25px; width:25px; float:left; background:url(/~dg001/~dg001/images/shadow/tr.png);  }
-.l{width:25px; height:803px; float:left; background: url(/~dg001/~dg001/images/shadow/l.png);  }
-.r{width:25px;  height:803px; float:left; background:url(/~dg001/~dg001/images/shadow/r.png); }
-.bl{height:25px; width:25px; float:left; background:url(/~dg001/~dg001/images/shadow/bl.png);  }
-.b{height:25px; width:960px;float:left; background:url(/~dg001/~dg001/images/shadow/b.png);  }
-.br{height:25px; width:25px;float:left; background:url(/~dg001/images/shadow/br.png);  }
+.tl{ height:25px; width:25px; float:left; background: url(/images/shadow/tl.png); }
+.t{height:25px; width:960px; float:left; background:url(/images/shadow/t.png);  }
+.tr{height:25px; width:25px; float:left; background:url(/images/shadow/tr.png);  }
+.l{width:25px; height:803px; float:left; background: url(/images/shadow/l.png);  }
+.r{width:25px;  height:803px; float:left; background:url(/images/shadow/r.png); }
+.bl{height:25px; width:25px; float:left; background:url(/images/shadow/bl.png);  }
+.b{height:25px; width:960px;float:left; background:url(/images/shadow/b.png);  }
+.br{height:25px; width:25px;float:left; background:url(/images/shadow/br.png);  }
 
 
 /* container for slides */

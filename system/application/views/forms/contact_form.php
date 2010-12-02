@@ -14,7 +14,7 @@ $data = array(
             );
 $referrals = array(
 'Search Engine' => 'Search Engine',
-'Email Shot'  => 'Email Shot',
+'Radio Advertisement'  => 'Radio Advertisement',
 'Word of Mouth' => 'Word of Mouth',
 'Other' => 'Other'
 );

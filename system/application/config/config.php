@@ -11,7 +11,7 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://213.229.86.110/~dg001/";
+$config['base_url']	= "http://www.devinegoodman.com/";
 
 /*
 |--------------------------------------------------------------------------
