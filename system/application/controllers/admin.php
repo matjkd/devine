@@ -85,11 +85,15 @@ function editpro()
 		$data['page'] ='professionals';
 		$data['content'] =	$this->content_model->get_content('professionals');
 		$data['professional'] = $this->professionals_model->get_professional($id);
-				foreach($data['professional'] as $row):
+			foreach($data['professional'] as $row):
 			
 				$data['practice'] = $this->professionals_model->practice_areas();
 				$data['professional_id'] = $id;
 			endforeach;
+		
+		$data['cases'] = $this->cases_model->list_cases();
+		
+		$data['assigned_cases'] = $this->cases_model->assigned_cases($id);
 		
 		$data['news'] = $this->news_model->list_news();
 		$data['main'] = "admin/edit_user";
@@ -205,6 +209,33 @@ function submit_news()
 			redirect('admin/editpro/'.$segment_active.'');   
 		}
 	}
+	
+	function assign_case()
+	{
+	$segment_active = $this->uri->segment(3);
+		if($segment_active==NULL)
+		{
+			redirect('welcome', 'refresh');
+		}
+		else
+		{
+			$this->cases_model->assign_case($segment_active);
+			
+			redirect('admin/editpro/'.$segment_active.'');   
+		}
+	}
+	
+function delete_assigned_cases($id)
+	{
+	
+		$data['case_id'] = $this->cases_model->delete_assigned_case($id);
+		foreach($data['case_id'] as $key => $row):
+		$professional = $row['professional_id'];
+		endforeach;
+		
+		redirect('admin/editpro/'.$professional.'', 'refresh');
+		
+	}	
 function delete_assigned_practice($id)
 	{
 	
@@ -221,7 +252,8 @@ function delete_assigned_practice($id)
 			if(isset($_FILES['file'])){
 				$file 	= read_file($_FILES['file']['tmp_name']);
 				$name 	= basename($_FILES['file']['name']);
-	
+				$name = str_replace(' ', '_', $name);
+				$name = str_replace(',', '', $name);
 				write_file('uploads/'.$name, $file);
 	
 				$this->cases_model->add($name);
@@ -230,6 +262,8 @@ function delete_assigned_practice($id)
 	
 			else $this->load->view('upload');
 	}
+	
+	
 	function is_logged_in()
 	{
 		$is_logged_in = $this->session->userdata('is_logged_in');
