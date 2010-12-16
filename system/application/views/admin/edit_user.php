@@ -9,13 +9,17 @@ jQuery(function() {
 
 <?php  $id = $row['professional_id'];?>
 
-<div style="float:right; width:45%;">
+<div style="float:right; width:650px;">
 
 	<?=$this->load->view('admin/practice_areas')?>
+	
+	
+<div style="clear:both;"><?=$this->load->view('admin/assign_case')?></div>
 
 </div>
+
 <?=form_open("admin/edit_pro/$id")?> 
-<div style="float:left; width:45%;">
+<div style="float:left; width:280px;">
 
 	<div class="form_label">Firstname:</div><?=form_input('firstname', $row['firstname'])?><br/>
 	<div class="form_label">Middle Name:</div><?=form_input('middlename', $row['middlename'])?><br/>

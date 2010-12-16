@@ -9,8 +9,8 @@
 	* html .ui-autocomplete {
 		height: 200px;
 	}
-	#sortable { list-style-type: none; margin: 0; padding: 0; width: 400px; }
-	#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em;  }
+	#sortable { list-style-type: none; margin: 0; padding: 0;  }
+	#sortable li { margin: 0 2px 3px 2px; padding: 0.2em; padding-left: 1.2em; float: left; }
 	#sortable li span { position: absolute; margin-left: -1.3em; }
 	</style>
 	
