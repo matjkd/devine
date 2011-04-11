@@ -10,6 +10,7 @@ class Admin extends My_Controller {
 		$this->load->model('professionals_model');
 		$this->load->model('cases_model');
 		$this->load->model('practice_model');
+		$this->load->model('attachments_model');
 	
 	}
 	
@@ -36,6 +37,16 @@ class Admin extends My_Controller {
 		$id = $this->uri->segment(3);
 		$data['page'] = $id;
 		$data['content'] =	$this->content_model->get_content($id);
+			foreach($data['content'] as $row):
+			
+				$data['content_id'] = $row['content_id'];
+				$data['content_name'] = $id;
+			endforeach;
+			
+		//get list of attachments and assigned attachments
+		$data['attachments'] = $this->attachments_model->list_attachments();
+		$data['assigned_attachments'] = $this->attachments_model->assigned_attachments($data['content_id']);
+		
 		$data['news'] = $this->news_model->list_news();
 		$data['main'] = "admin/edit_content";
 		$data['menu'] =	$this->content_model->get_menus();
@@ -195,6 +206,31 @@ function submit_news()
 		$this->load->vars($data);
 		$this->load->view('template');
 	}
+	function attachments()
+	{
+		$id = "attachments";
+		
+		$data['content'] =	$this->content_model->get_content($id);
+				
+		$data['menu'] =	$this->content_model->get_menus();
+		$data['main'] = "admin/upload_attachment";
+		$data['slideshow'] = "global/slideshow1";
+		$data['news'] = $this->news_model->list_news();
+		$data['sidebar'] = 'sidebar/news';
+		$data['page'] = $id;
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		
+		if($is_logged_in!=NULL)
+			{
+			$data['edit'] = site_url("admin/edit/$id");
+			$data['add'] = site_url("admin/attachments/");
+	        }
+			                       
+			
+	
+		$this->load->vars($data);
+		$this->load->view('template');
+	}
 	function assign_practice()
 	{
 	$segment_active = $this->uri->segment(3);
@@ -224,6 +260,21 @@ function submit_news()
 			redirect('admin/editpro/'.$segment_active.'');   
 		}
 	}
+	function assign_attachment()
+	{
+	$segment_active = $this->uri->segment(3);
+	$title = $this->input->post('title');
+		if($segment_active==NULL)
+		{
+			redirect('welcome', 'refresh');
+		}
+		else
+		{
+			$this->attachments_model->assign_attachment($segment_active);
+			
+			redirect('admin/edit/'.$title.'');   
+		}
+	}
 	
 function delete_assigned_cases($id)
 	{
@@ -247,6 +298,20 @@ function delete_assigned_practice($id)
 		redirect('admin/editpro/'.$professional.'', 'refresh');
 		
 	}
+	function delete_assigned_attachment($id)
+	{
+	
+		$data['practice_id'] = $this->attachments_model->delete_assigned_attachment($id);
+		//need to get title
+		
+		
+		foreach($data['practice_id'] as $key => $row):
+		$content = $row['content_id'];
+		endforeach;
+		
+		redirect('admin/edit/'.$title.'', 'refresh');
+		
+	}
 	function do_upload()
 	{
 			if(isset($_FILES['file'])){
@@ -258,6 +323,22 @@ function delete_assigned_practice($id)
 	
 				$this->cases_model->add($name);
 				redirect('cases/view');		
+			}
+	
+			else $this->load->view('upload');
+	}
+	
+	function add_attachment()
+	{
+			if(isset($_FILES['file'])){
+				$file 	= read_file($_FILES['file']['tmp_name']);
+				$name 	= basename($_FILES['file']['name']);
+				$name = str_replace(' ', '_', $name);
+				$name = str_replace(',', '', $name);
+				write_file('uploads/'.$name, $file);
+	
+				$this->attachments_model->add($name);
+				redirect('attachments/view');		
 			}
 	
 			else $this->load->view('upload');

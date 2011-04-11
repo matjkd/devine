@@ -33,9 +33,18 @@
         	       
         </li>
      
+        <?php 
+        $is_logged_in = $this->session->userdata('is_logged_in');
+		$role = $this->session->userdata('role');
+		if(isset($is_logged_in) && $role == 1)
+		{ ?>
+			 <li <?php if($menu['menu_category']=='11'){echo "class='current'";}?>><a href="<?=base_url()?>attachments"><span>Attachments</span></a>
+        	       
+        </li>
+                       
+		<?php }	
          
-         
-       
+       ?>
     </ul>
 </div>
 

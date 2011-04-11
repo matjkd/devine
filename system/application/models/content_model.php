@@ -53,5 +53,12 @@ class Content_model extends Model {
 		
 		return $data;
 		}
+		function add_file($file)
+    	{
+        $this->db->insert('attachments', array(
+								'added_by'=>$this->session->userdata('user_id'),
+        						'title' =>$this->input->post('title'),
+								'file'=>$file ));
+    	}
 	
 }

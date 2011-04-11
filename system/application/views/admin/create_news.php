@@ -1,11 +1,12 @@
 <script type="text/javascript">
-tinyMCE.init({
-	mode : "textareas",
-	theme : "advanced"
-	
-
-		
-	
+jQuery(function() {
+	jQuery('.wymeditor').wymeditor({
+	    
+      
+        stylesheet: 'styles.css'
+      
+        
+    });
 });
 </script>
 <?php // Change the css classes to suit your needs    
@@ -24,12 +25,12 @@ echo form_open('admin/submit_news', $attributes); ?>
 	<?php echo form_error('news_content'); ?>
 	<br />
 							
-	<?=form_textarea( array( 'name' => 'news_content', 'rows' => '5', 'cols' => '80', 'value' => set_value('news_content') ) )?>
+	<textarea cols=75 rows=20 name="content" id="content" class='wymeditor'></textarea>
 <?=form_hidden('page_type', 1)?>
 </p>
 
 <p>
-        <?php echo form_submit( 'submit', 'Submit'); ?>
+       <input type="submit" class="wymupdate" />
 </p>
 
 <?php echo form_close(); ?>

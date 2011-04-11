@@ -3,9 +3,9 @@
 		$("#datepicker").datepicker();
 	});
 	</script>
-<h1>Upload Case</h1>
+<h1>Add Attachment</h1>
 		
-		<form enctype="multipart/form-data" action="<?=site_url('admin/do_upload')?>" method="post">
+		<form enctype="multipart/form-data" action="<?=site_url('admin/add_attachment')?>" method="post">
 
 			
 <p>
@@ -30,6 +30,6 @@
 	
 		<br style="clear:both; height: 0px;" />
 		
-</form>
+		</form>
 	
 	
