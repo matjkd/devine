@@ -25,6 +25,11 @@ class Admin extends My_Controller {
 				$id = $this->uri->segment(3);
 			}
 		$data['content'] =	$this->content_model->get_content($id);
+		
+		
+		//show attachments in content
+		//$data['attachments'] = $this->attachments_model->get_attachments($id);
+		
 		$data['main'] = "pages/dynamic";
 		$data['edit'] = "admin/edit/$id";
 		$this->load->vars($data);
