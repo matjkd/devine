@@ -37,6 +37,9 @@ function content()
 		$data['content'] =	$this->content_model->get_content($id);
 		$data['menu'] =	$this->content_model->get_menus();
 		
+		//show attachments in content
+		//$data['attachments'] = $this->attachments_model->get_attachments($id);
+		
 		$data['slideshow'] = "global/slideshow1";
 		$data['news'] = $this->news_model->list_news();
 		$data['sidebar'] = 'sidebar/news';
