@@ -29,9 +29,7 @@ class Forms extends Controller {
     	$data['name'] = $this->input->post('name');
 			if($this->form_validation->run() == FALSE)
 				{
-					
-					
-					
+						
 					$data['errors'] = validation_errors();
 					$data['random_captcha'] = $this->captcha_model->get_captcha();
 					$data['main'] = 'forms/contact_form';

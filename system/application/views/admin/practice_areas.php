@@ -48,9 +48,11 @@
 
 <ul id='sortable'>
 <?php foreach($assigned_practices as $key => $practices):?>
+	
 <li class="ui-state-default">
 <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><?=$practices['practice_title']?><a href="<?=base_url()?>admin/delete_assigned_practice/<?=$practices['links_id']?>" ><div style="float:right;" class="ui-icon ui-icon-circle-close"></div></a>
 </li>
+
 <?php endforeach;?>
 </ul>
 </div>

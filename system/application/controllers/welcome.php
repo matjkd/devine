@@ -5,7 +5,7 @@ class Welcome extends MY_Controller {
 	function __Construct()
 	{
 		parent::__Construct();
-			
+		$this->load->model('attachments_model');	
 	}
 	
 	function index()
@@ -35,10 +35,17 @@ function content()
 				$data['main'] = "pages/dynamic";
 			}
 		$data['content'] =	$this->content_model->get_content($id);
+		
+		foreach($data['content'] as $row): //get content id 
+		
+			$content_id = $row['content_id'];
+		
+		endforeach;
+		
 		$data['menu'] =	$this->content_model->get_menus();
 		
 		//show attachments in content
-		//$data['attachments'] = $this->attachments_model->get_attachments($id);
+		$data['attachments'] = $this->attachments_model->get_attachments($content_id);
 		
 		$data['slideshow'] = "global/slideshow1";
 		$data['news'] = $this->news_model->list_news();

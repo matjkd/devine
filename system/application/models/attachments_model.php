@@ -7,17 +7,46 @@ class Attachments_model extends Model {
     {
         $this->db->insert('attachments', array(
 								'added_by'=>$this->session->userdata('user_id'),
-        						'title' =>$this->input->post('title'),
+								'date_added' => $this->input->post('date_added'),
+        						'title' => $this->input->post('title'),
 								'file'=>$file ));
     }
-
-	function delete($fileid)
+	
+	function edit($id)
+    {
+        $this->db->where('attachment_id', $id);
+	    $this->db->update('attachments', array(
+								'added_by'=>$this->session->userdata('user_id'),
+								'date_updated' => $this->input->post('date_added'),
+        						'title' => $this->input->post('title')
+								 ));
+    }
+	
+	function delete($id)
 	{
-		$query = $this->db->get_where('attachments',array('id'=>$fileid));
-		$result = $query->result();
-		$query = $this->db->delete('attachments', array('id'=>$fileid));
-		return $result[0]->name;
+	
+	
+	//delete file from server, first get filename
+	$attachmentdata = $this->get_attachment($id);
+		foreach($attachmentdata as $row):
+		
+			$filename = $row['file'];
+		
+		endforeach;
+	
+	unlink('./uploads/'.$filename.'');
+	
+	//remove any assigned attachments from content
+	$this->db->delete('attachment_links', array('attachment_id' => $id)); 
+	
+	//remove any assigned attachments from news
+	$this->db->delete('news_attachments', array('attachment_id' => $id)); 
+	
+	//delete from database	
+	$this->db->delete('attachments', array('attachment_id' => $id)); 
 	}
+
+	
 	function list_attachments()
 		{
 			$data = array();
@@ -88,6 +117,41 @@ class Attachments_model extends Model {
 		
 		return $data;
 	}	
+	function get_attachment($id) //attachment id
+		{
+			$data = array();
+			$this->db->where('attachment_id', $id);
+			
+			$query = $this->db->get('attachments');
+			if ($query->num_rows() == 1)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+		}
+
+	function get_attachments($id) //content id
+		{
+			$data = array();
+			$this->db->where('content_id', $id);
+			$this->db->join('attachments', 'attachments.attachment_id = attachment_links.attachment_id', 'left');
+			$query = $this->db->get('attachment_links');
+			if ($query->num_rows() > 0)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+		}
 
 
 }

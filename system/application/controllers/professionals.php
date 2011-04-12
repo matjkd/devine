@@ -6,7 +6,7 @@ function __Construct()
 	{
 		parent::__Construct();
 		$this->load->model('professionals_model');
-			
+		$this->load->model('attachments_model');	
 	}
 function index()
 	{
@@ -25,9 +25,20 @@ function view()
 			}
 		$id = "professionals";
 		$data['content'] =	$this->content_model->get_content($id);
+		foreach($data['content'] as $row): //get content id 
+		
+			$content_id = $row['content_id'];
+		
+		endforeach;
+		
 		$data['professionals'] = $this->professionals_model->get_professionals();
 		$data['news'] = $this->news_model->list_news();
 		$data['menu'] =	$this->content_model->get_menus();
+		
+		//show attachments in content
+		$data['attachments'] = $this->attachments_model->get_attachments($content_id);
+		
+		
 		$data['slideshow'] = "global/slideshowpro";
 		$data['sidebar'] = 'sidebar/news';
 		$data['main'] = "pages/profile_list";

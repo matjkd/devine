@@ -235,6 +235,50 @@ function submit_news()
 		$this->load->vars($data);
 		$this->load->view('template');
 	}
+	
+	function edit_attachment($attachment_id)
+	{
+		$id = "attachments";
+		$data['attachment_id'] = $attachment_id;
+		$data['content'] =	$this->content_model->get_content($id);
+		$data['attachment'] = $this->attachments_model->get_attachment($attachment_id);		
+		$data['menu'] =	$this->content_model->get_menus();
+		$data['main'] = "admin/edit_attachment";
+		$data['slideshow'] = "global/slideshow1";
+		$data['news'] = $this->news_model->list_news();
+		$data['sidebar'] = 'sidebar/news';
+		$data['page'] = $id;
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		
+		if($is_logged_in!=NULL)
+			{
+			$data['edit'] = site_url("admin/edit/$id");
+			$data['add'] = site_url("admin/attachments/");
+	        }
+			                       
+			
+	
+		$this->load->vars($data);
+		$this->load->view('template');
+	}
+	
+	function change_attachment()
+	{
+		$id = $this->input->post('attachment_id');
+		$this->attachments_model->edit($id);
+		redirect('attachments', 'refresh');
+	}
+	function delete_attachment($id)
+	{
+		
+		
+		$this->attachments_model->delete($id);
+		
+	
+		redirect('attachments', 'refresh');
+	}
+	
+	
 	function assign_practice()
 	{
 	$segment_active = $this->uri->segment(3);
@@ -306,12 +350,18 @@ function delete_assigned_practice($id)
 	{
 	
 		$data['practice_id'] = $this->attachments_model->delete_assigned_attachment($id);
-		//need to get title
-		
-		
 		foreach($data['practice_id'] as $key => $row):
-		$content = $row['content_id'];
+			$content = $row['content_id'];
 		endforeach;
+		//need to get title
+		$data['content'] =	$this->content_model->get_content_id($content);
+		foreach($data['content'] as $row):
+			
+				$title = $row['menu_title'];
+			
+		endforeach;
+		
+	
 		
 		redirect('admin/edit/'.$title.'', 'refresh');
 		

@@ -3,10 +3,27 @@
 class Content_model extends Model {
 
 	
-		function get_content($id)
+		function get_content($id) //get content based on menu title
 		{
 			$data = array();
 			$this->db->where('menu_title', $id);
+			$query = $this->db->get('content');
+			if ($query->num_rows() == 1)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+		}
+		
+		function get_content_id($id) //get content based on id
+		{
+			$data = array();
+			$this->db->where('content_id', $id);
 			$query = $this->db->get('content');
 			if ($query->num_rows() == 1)
 			{

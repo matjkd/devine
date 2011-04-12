@@ -21,7 +21,9 @@
 
 <tr>
 <td><img src="<?=base_url()?>images/pdf.png" width="28px"></td>
-<td><a href="<?=base_url()?>uploads/<?=$attachment['file'];?>"><?=$attachment['title'];?></a></td>
+<td><a href="<?=base_url()?>uploads/<?=$attachment['file'];?>"><?=$attachment['title'];?></a> 
+	- <a href="<?=base_url()?>admin/edit_attachment/<?=$attachment['attachment_id'];?>">edit</a>
+	- <a href="<?=base_url()?>admin/delete_attachment/<?=$attachment['attachment_id'];?>">delete</a></td>
 </tr>
 
 <?php endforeach;?>

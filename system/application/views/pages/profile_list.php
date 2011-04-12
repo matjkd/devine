@@ -102,3 +102,5 @@ foreach($professionals as $row1):?>
 ?>
 </tbody>
 </Table>
+
+<?=$this->load->view('pages/list_attachments')?>
