@@ -97,6 +97,41 @@ class Attachments_model extends Model {
 			
 		return;
 	}
+	
+	function assigned_news_attachments($id)
+	{
+		$data = array();
+			$this->db->orderby('date_added', 'asc');
+			$this->db->join('news_attachments', 'news_attachments.attachment_id = attachments.attachment_id', 'left');
+			$this->db->where('news_attachments.news_id', $id);
+			$query = $this->db->get('attachments');
+			if ($query->num_rows() > 0)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+	}
+	function assign_attachment_news($id)
+	{
+		$attachment = $this->input->post('attachment');
+		$data = array();
+		
+		$new_attachment_data = array(
+				'attachment_id' => $attachment,
+				'news_id' => $id
+		);
+		$this->db->insert('news_attachments', $new_attachment_data);
+		
+			
+		return;
+	}
+	
+	
 	function delete_assigned_attachment($id)
 	{
 		
@@ -117,6 +152,28 @@ class Attachments_model extends Model {
 		
 		return $data;
 	}	
+
+	function delete_news_attachment($id)
+	{
+		
+		$data = array();
+		$this->db->select('news_id');
+		$this->db->where('link_id', $id);
+		
+		$Q = $this->db->get('news_attachments');
+		if ($Q->num_rows() > 0) {
+			foreach ($Q->result_array() as $row) {
+				$data[] = $row;
+			}
+		}
+		$Q->free_result();
+		
+		$this->db->where('link_id', $id);
+		$this->db->delete('news_attachments');
+		
+		return $data;
+	}	
+	
 	function get_attachment($id) //attachment id
 		{
 			$data = array();
@@ -153,5 +210,22 @@ class Attachments_model extends Model {
 		return $data;
 		}
 
+function get_news_attachments($id) //news id
+		{
+			$data = array();
+			$this->db->where('news_id', $id);
+			$this->db->join('attachments', 'attachments.attachment_id = news_attachments.attachment_id', 'left');
+			$query = $this->db->get('news_attachments');
+			if ($query->num_rows() > 0)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+		}
 
 }

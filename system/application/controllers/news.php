@@ -5,7 +5,7 @@ class News extends MY_Controller {
 	function __Construct()
 	{
 		parent::__Construct();
-		
+		$this->load->model('attachments_model');	
 			
 	}
 	
@@ -70,7 +70,9 @@ function view_item()
 			$data['edit'] = site_url("admin/editnews/");
 			$data['create_news'] = site_url("admin/create_news");
 	        }
-			
+		
+		//show attachments in content
+		$data['attachments'] = $this->attachments_model->get_news_attachments($id);	
                        
 			
 		$data['info'] = "infoblock/times";

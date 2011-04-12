@@ -23,3 +23,5 @@ $new_date_added = date('Y - F', $old_date_added);
 
 <br/>
 <?php endforeach; ?>
+
+<?=$this->load->view('pages/list_attachments')?>

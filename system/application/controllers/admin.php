@@ -81,6 +81,12 @@ function editnews()
 		$data['page'] ='news';
 		$data['content'] =	$this->content_model->get_content('news');
 		$data['news'] =	$this->news_model->get_news($id);
+		$data['news_id'] = $id;
+		
+		//get list of attachments and assigned attachments
+		$data['attachments'] = $this->attachments_model->list_attachments();
+		$data['assigned_attachments'] = $this->attachments_model->assigned_news_attachments($data['news_id']);
+		
 		
 		$data['main'] = "admin/edit_news";
 		$data['menu'] =	$this->content_model->get_menus();
@@ -323,6 +329,21 @@ function submit_news()
 			redirect('admin/edit/'.$title.'');   
 		}
 	}
+	function news_attachment()
+	{
+	$segment_active = $this->uri->segment(3);
+	$news_id = $this->input->post('news_id');
+		if($segment_active==NULL)
+		{
+			redirect('welcome', 'refresh');
+		}
+		else
+		{
+			$this->attachments_model->assign_attachment_news($segment_active);
+			
+			redirect('admin/editnews/'.$news_id.'');   
+		}
+	}
 	
 function delete_assigned_cases($id)
 	{
@@ -366,6 +387,20 @@ function delete_assigned_practice($id)
 		redirect('admin/edit/'.$title.'', 'refresh');
 		
 	}
+	
+	function delete_news_attachment($id) //attachment id
+	{
+		
+		$data['news_id'] = $this->attachments_model->delete_news_attachment($id);
+		//need to get news id		
+		foreach($data['news_id'] as $key => $row):
+			$news_id = $row['news_id'];
+		endforeach;
+		
+		redirect('admin/editnews/'.$news_id.'', 'refresh');
+		
+	}
+	
 	function do_upload()
 	{
 			if(isset($_FILES['file'])){
