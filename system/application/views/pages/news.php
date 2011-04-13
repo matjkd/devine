@@ -34,4 +34,5 @@ $new_date_added = date('Y - F', $old_date_added);
 
 
 <br/>
+<a href="<?=base_url()?>news/view_item/<?=$news['news_id']?>">Read More...</a>
 <?php endforeach; ?>
