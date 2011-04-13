@@ -17,7 +17,7 @@ class Attachments_model extends Model {
         $this->db->where('attachment_id', $id);
 	    $this->db->update('attachments', array(
 								'added_by'=>$this->session->userdata('user_id'),
-								'date_updated' => $this->input->post('date_added'),
+								'date_added' => $this->input->post('date_added'),
         						'title' => $this->input->post('title')
 								 ));
     }
@@ -116,6 +116,7 @@ class Attachments_model extends Model {
 		
 		return $data;
 	}
+
 	function assign_attachment_news($id)
 	{
 		$attachment = $this->input->post('attachment');
@@ -130,6 +131,44 @@ class Attachments_model extends Model {
 			
 		return;
 	}
+	
+	function assigned_profile_attachments($id)
+	{
+		$data = array();
+			$this->db->orderby('date_added', 'asc');
+			$this->db->join('profile_attachment', 'profile_attachment.attachment_id = attachments.attachment_id', 'left');
+			$this->db->where('profile_attachment.profile_id', $id);
+			$query = $this->db->get('attachments');
+			if ($query->num_rows() > 0)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+	}
+
+	function assign_attachment_profile($id)
+	{
+		$attachment = $this->input->post('attachment');
+		$data = array();
+		
+		$new_attachment_data = array(
+				'attachment_id' => $attachment,
+				'profile_id' => $id
+		);
+		$this->db->insert('profile_attachment', $new_attachment_data);
+		
+			
+		return;
+	}
+	
+	
+	
+	
 	
 	
 	function delete_assigned_attachment($id)
@@ -172,7 +211,28 @@ class Attachments_model extends Model {
 		$this->db->delete('news_attachments');
 		
 		return $data;
-	}	
+	}
+	
+	function delete_profile_attachment($id)
+	{
+		
+		$data = array();
+		$this->db->select('profile_id');
+		$this->db->where('link_id', $id);
+		
+		$Q = $this->db->get('profile_attachment');
+		if ($Q->num_rows() > 0) {
+			foreach ($Q->result_array() as $row) {
+				$data[] = $row;
+			}
+		}
+		$Q->free_result();
+		
+		$this->db->where('link_id', $id);
+		$this->db->delete('profile_attachment');
+		
+		return $data;
+	}		
 	
 	function get_attachment($id) //attachment id
 		{
@@ -227,5 +287,21 @@ function get_news_attachments($id) //news id
 		
 		return $data;
 		}
-
+function get_profile_attachments($id) //profile id
+		{
+			$data = array();
+			$this->db->where('profile_id', $id);
+			$this->db->join('attachments', 'attachments.attachment_id = profile_attachment.attachment_id', 'left');
+			$query = $this->db->get('profile_attachment');
+			if ($query->num_rows() > 0)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+		}
 }

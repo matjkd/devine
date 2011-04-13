@@ -52,3 +52,13 @@ foreach($cases as $case):?>
 
 </table>
 <?php } ?>
+
+<?php if($attachments == NULL)
+{
+}
+else
+	{
+?>
+<h3>Select Publications</h3>
+<?=$this->load->view('pages/list_attachments')?>
+<?php } ?>

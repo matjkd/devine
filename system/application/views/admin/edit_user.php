@@ -16,6 +16,8 @@ jQuery(function() {
 	
 <div style="clear:both;"><?=$this->load->view('admin/assign_case')?></div>
 
+<div style="clear:both;"><?=$this->load->view('admin/profile_attachment')?></div>
+
 </div>
 
 <?=form_open("admin/edit_pro/$id")?> 

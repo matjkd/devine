@@ -74,7 +74,8 @@ function view_profile($profile_id)
 			$data['edit'] = site_url("professionals/edit/$profile_id");
 	        }
 			
-                       
+         //show attachments in content
+		$data['attachments'] = $this->attachments_model->get_profile_attachments($profile_id);              
 			
 		$data['assigned_practices'] = $this->professionals_model->assigned_practice_areas($profile_id);
 		$this->load->vars($data);
@@ -102,6 +103,10 @@ function practice($practice_id)
 		$data['sidebar'] = 'sidebar/news';
 		$data['main'] = "pages/profile_list";
 		$data['page'] = $id;
+		
+		//show attachments in content
+		$data['attachments'] = $this->attachments_model->get_attachments($id);
+		
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		
 		if($is_logged_in!=NULL)

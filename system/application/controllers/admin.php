@@ -116,6 +116,11 @@ function editpro()
 		
 		$data['assigned_cases'] = $this->cases_model->assigned_cases($id);
 		
+		//get list of attachments and assigned attachments
+		$data['attachments'] = $this->attachments_model->list_attachments();
+		$data['assigned_attachments'] = $this->attachments_model->assigned_profile_attachments($id);
+		
+		
 		$data['news'] = $this->news_model->list_news();
 		$data['main'] = "admin/edit_user";
 		$data['menu'] =	$this->content_model->get_menus();
@@ -314,6 +319,8 @@ function submit_news()
 			redirect('admin/editpro/'.$segment_active.'');   
 		}
 	}
+	
+	
 	function assign_attachment()
 	{
 	$segment_active = $this->uri->segment(3);
@@ -342,6 +349,21 @@ function submit_news()
 			$this->attachments_model->assign_attachment_news($segment_active);
 			
 			redirect('admin/editnews/'.$news_id.'');   
+		}
+	}
+
+	function profile_attachment()
+	{
+	$segment_active = $this->uri->segment(3);
+		if($segment_active==NULL)
+		{
+			redirect('welcome', 'refresh');
+		}
+		else
+		{
+			$this->attachments_model->assign_attachment_profile($segment_active);
+			
+			redirect('admin/editpro/'.$segment_active.'');   
 		}
 	}
 	
@@ -398,6 +420,18 @@ function delete_assigned_practice($id)
 		endforeach;
 		
 		redirect('admin/editnews/'.$news_id.'', 'refresh');
+		
+	}
+	
+	function delete_profile_attachment($id) //attachment id
+	{
+		$data['attachment_id'] = $this->attachments_model->delete_profile_attachment($id);
+		foreach($data['attachment_id'] as $key => $row):
+		$professional = $row['profile_id'];
+		endforeach;
+		
+		redirect('admin/editpro/'.$professional.'', 'refresh');	
+		
 		
 	}
 	
