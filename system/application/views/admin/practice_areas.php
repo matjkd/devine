@@ -21,11 +21,7 @@
 			source: availableTags
 		});
 	});
-	$(function() {
-		$("#sortable").sortable();
-		$("#sortable").disableSelection();
-		
-	});
+	
 <!--
 	function deletefeature(id) {
 		var answer = confirm("are you sure you want to delete feature?")
@@ -41,9 +37,15 @@
 </script>
 
 <?php echo form_open('admin/assign_practice/'.$professional_id.'');?>
-<input type="text" name="practice" id="practices"  "/>
+<input type="text" name="practice" id="practices"/>
+
+
+
+
 <?php echo form_submit( 'submit', 'Add Practice Area');  ?>
-<?php echo form_close();?>
+<?php echo form_close();?><br/>
+<br/>
+
 <div id='features' style="padding-top:10px;">
 
 <ul id='sortable'>
@@ -55,4 +57,5 @@
 
 <?php endforeach;?>
 </ul>
-</div>
+</div><br/>
+<br/>

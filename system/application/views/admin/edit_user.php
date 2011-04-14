@@ -11,7 +11,7 @@ jQuery(function() {
 
 <div style="float:right; width:650px;">
 
-	<?=$this->load->view('admin/practice_areas')?>
+	<div style="clear:both;"><?=$this->load->view('admin/practice_areas')?></div>
 	
 	
 <div style="clear:both;"><?=$this->load->view('admin/assign_case')?></div>
@@ -21,11 +21,14 @@ jQuery(function() {
 </div>
 
 <?=form_open("admin/edit_pro/$id")?> 
-<div style="float:left; width:280px;">
+<div style="float:left; width:290px;">
 
-	<div class="form_label">Firstname:</div><?=form_input('firstname', $row['firstname'])?><br/>
-	<div class="form_label">Middle Name:</div><?=form_input('middlename', $row['middlename'])?><br/>
-	<div class="form_label">Lastname:</div><?=form_input('lastname', $row['lastname'])?><br/>
+	<div class="form_label">Firstname:</div><?=form_input('firstname', $row['firstname'])?><br/><br/>
+	
+	<div class="form_label">Middle Name:</div><?=form_input('middlename', $row['middlename'])?><br/><br/>
+	
+	<div class="form_label">Lastname:</div><?=form_input('lastname', $row['lastname'])?><br/><br/>
+	
 	<div class="form_label">Title:</div> <?=form_input('title', $row['title'])?>
 </div>
 <div style="clear:both;"></div>

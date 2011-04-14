@@ -40,7 +40,10 @@ class Attachments_model extends Model {
 	$this->db->delete('attachment_links', array('attachment_id' => $id)); 
 	
 	//remove any assigned attachments from news
-	$this->db->delete('news_attachments', array('attachment_id' => $id)); 
+	$this->db->delete('news_attachments', array('attachment_id' => $id));
+	
+	//remove any assigned attachments from profiles
+	$this->db->delete('profile_attachment', array('attachment_id' => $id));  
 	
 	//delete from database	
 	$this->db->delete('attachments', array('attachment_id' => $id)); 
