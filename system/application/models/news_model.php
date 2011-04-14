@@ -6,7 +6,10 @@ function list_news()
 		{
 			$data = array();
 			$this->db->where('page_type', 1);
-			$this->db->order_by('date_added', 'desc');
+			$this->db->select('news.date_added, news.added_by, news.news_id, news.news_content, news.news_title, attachments.file, attachments.title');
+			$this->db->order_by('news.date_added', 'desc');
+			$this->db->join('news_attachments', 'news_attachments.news_id=news.news_id', 'left');
+			$this->db->join('attachments', 'attachments.attachment_id=news_attachments.attachment_id', 'left');
 			$query = $this->db->get('news');
 			if ($query->num_rows() > 0)
 			{

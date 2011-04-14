@@ -120,4 +120,18 @@ function practice($practice_id)
 		$this->load->vars($data);
 		$this->load->view('template');
 	}
+	
+	function ajaxsort()
+	{
+			$pages = $this->input->post('pages');
+			parse_str($pages, $pageOrder);
+			
+			foreach ($pageOrder['page'] as $key => $value):
+			mysql_query("UPDATE ignite_practice_area_links SET `order` = '$key' WHERE `links_id` = '$value'") or die(mysql_error());
+			
+			
+			//$this->db->update('practice_area_links', $pro_update);
+			endforeach;
+
+	}
 }

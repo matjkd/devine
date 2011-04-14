@@ -89,9 +89,11 @@ function edit_pro($id)
 		$update = $this->db->update('professionals', $pro_update);
 		return $update;
 		}
+
 function practice_areas()
 {
 	$data = array();
+	
 	$Q = $this->db->get('practices');
 	
 	if ($Q->num_rows() > 0) {
@@ -165,7 +167,7 @@ function delete_assigned_practice($id)
 function assigned_practice_areas($id)
 	{
 		$data = array();
-	
+		$this->db->order_by('practice_area_links.order');
 		$this->db->where('professional_id', $id);
 		$this->db->join('practices', 'practices.practice_id=practice_area_links.practice_area_id', 'left');
 		$Q = $this->db->get('practice_area_links');

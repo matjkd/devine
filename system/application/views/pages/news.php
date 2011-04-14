@@ -32,7 +32,16 @@ $new_date_added = date('Y - F', $old_date_added);
 </p>
 <?=$news['news_content'];?>
 
+<?php if(isset($news['file'])) { ?>
+<table>
+<tr style="padding-bottom:3px;">
+	<td><img src="<?=base_url()?>images/pdf.png" width="28px"></td>
+	<td style="border-bottom:0px #aabbc8 solid; ">
+		<a href="<?=base_url()?>uploads/<?=$news['file'];?>"><?=$news['title'];?></a></td>
+	</tr>
+</table>
+<?php } ?>
 
-<br/>
-<a href="<?=base_url()?>news/view_item/<?=$news['news_id']?>">Read More...</a>
+
+
 <?php endforeach; ?>
