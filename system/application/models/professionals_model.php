@@ -5,9 +5,27 @@ class Professionals_model extends Model {
 function get_professionals()
 		{
 			$data = array();
+			$this->db->where('active', '1');
 			$this->db->orderby('lastname', 'asc');
 			$query = $this->db->get('professionals');
 			if ($query->num_rows() > 1)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+		}
+function get_inactive_professionals()
+		{
+			$data = array();
+			$this->db->where('active', 0);
+			$this->db->orderby('lastname', 'asc');
+			$query = $this->db->get('professionals');
+			if ($query->num_rows() > 0)
 			{
 				foreach ($query->result_array() as $row)
 				
@@ -69,6 +87,22 @@ function get_cases($id)
 		
 		return $data;
 		}
+		
+function add_pro()
+{
+	
+        $this->db->insert('professionals', array(
+								'firstname'=>$this->input->post('firstname'),
+								'middlename' => $this->input->post('middlename'),
+        						'lastname' => $this->input->post('lastname'),
+								'title'=>$this->input->post('title'),
+								'active' => '0'
+								)
+						);
+  
+}
+		
+		
 function edit_pro($id)
 		{
 			
@@ -82,7 +116,8 @@ function edit_pro($id)
     				'education' => $this->input->post('education'),
     				'admissions' => $this->input->post('admissions'),
     				'awards' => $this->input->post('awards'),
-    				'involvement' => $this->input->post('involvement')
+    				'involvement' => $this->input->post('involvement'),
+					'active' => $this->input->post('active')
     				);
 					
 		$this->db->where('professional_id', $id);

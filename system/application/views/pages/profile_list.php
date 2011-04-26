@@ -49,7 +49,8 @@ table { clear: both }
 	 
 		if(isset($edit))
 			{
-				echo " - <a href='$edit'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/edit_page.png'></a>";
+				echo "  <a href='$edit'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/edit_page.png'></a>";
+				echo "  <a href='".base_url()."admin/add_pro'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/add.png'></a>";
 			}
 	
 	?>
@@ -103,4 +104,16 @@ foreach($professionals as $row1):?>
 </tbody>
 </Table>
 
+<?php	if(isset($edit))
+			{
+			
+			 foreach($inactive_professionals as $row2):?>
+			
+			<a href="<?=base_url()?>professionals/view_profile/<?=$row2['professional_id'];?>">
+				<strong><?=$row2['firstname'];?> <?=$row2['middlename'];?>. <?=$row2['lastname'];?></strong> </a>
+				<br/>
+	
+<?php endforeach; 
+			} ?>
 <?=$this->load->view('pages/list_attachments')?>
+

@@ -32,6 +32,7 @@ function view()
 		endforeach;
 		
 		$data['professionals'] = $this->professionals_model->get_professionals();
+		$data['inactive_professionals'] = $this->professionals_model->get_inactive_professionals();
 		$data['news'] = $this->news_model->list_news();
 		$data['menu'] =	$this->content_model->get_menus();
 		

@@ -29,7 +29,10 @@ jQuery(function() {
 	
 	<div class="form_label">Lastname:</div><?=form_input('lastname', $row['lastname'])?><br/><br/>
 	
-	<div class="form_label">Title:</div> <?=form_input('title', $row['title'])?>
+	<div class="form_label">Title:</div> <?=form_input('title', $row['title'])?><br/><br/>
+	
+
+<div class="form_label">Active:</div> <?=form_checkbox('active', '1', $row['active'])?>
 </div>
 <div style="clear:both;"></div>
 bio:

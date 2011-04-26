@@ -99,10 +99,10 @@ function edit_news()
 		$this->news_model->edit_news($id);
 		redirect ("admin/editnews/$id");
 	}
-function editpro()
+function editpro($id)
 	{
 		
-		$id = $this->uri->segment(3);
+		//$id = $this->uri->segment(3);
 		$data['page'] ='professionals';
 		$data['content'] =	$this->content_model->get_content('professionals');
 		$data['professional'] = $this->professionals_model->get_professional($id);
@@ -130,9 +130,9 @@ function editpro()
 		$this->load->vars($data);
 		$this->load->view('template');
 	}
-function edit_pro()
+function edit_pro($id)
 	{
-		$id = $this->uri->segment(3);
+		
 		$this->professionals_model->edit_pro($id);
 		redirect ("admin/editpro/$id");
 	}
@@ -220,6 +220,31 @@ function submit_news()
 	
 		$this->load->vars($data);
 		$this->load->view('template');
+	}
+	function add_pro()
+	{
+		$data['page'] ='professionals';
+		
+		$data['main'] = "admin/create_profile";
+		$data['menu'] =	$this->content_model->get_menus();
+		
+		
+		
+		$data['content'] =	$this->content_model->get_content('news');
+		
+
+		$data['news'] = $this->news_model->list_news();
+		
+		
+		$this->load->vars($data);
+		$this->load->view('template');
+		
+	}
+	
+	function submit_profile()
+	{
+		$this->professionals_model->add_pro();
+		redirect ("professionals");
 	}
 	function attachments()
 	{
