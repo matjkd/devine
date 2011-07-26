@@ -74,6 +74,7 @@ function get_cases($id)
 		{
 			$data = array();
 			$this->db->where('professional_id', $id);
+			$this->db->orderby('cases.date_added', 'desc');
 			$this->db->join('cases', 'cases.case_id = case_links.case_id', 'left');
 			$query = $this->db->get('case_links');
 			if ($query->num_rows() > 0)
@@ -117,7 +118,7 @@ function edit_pro($id)
     				'admissions' => $this->input->post('admissions'),
     				'awards' => $this->input->post('awards'),
     				'involvement' => $this->input->post('involvement'),
-					'active' => $this->input->post('active')
+				'active' => $this->input->post('active')
     				);
 					
 		$this->db->where('professional_id', $id);

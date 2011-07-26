@@ -60,7 +60,7 @@ class Forms extends Controller {
 				
 						$this->email->from('info@devinegoodman.com', 'Devine Goodman Rasco and Wells');
 						$this->email->to('kvarga@devinegoodman.com'); 
-						$this->email->cc('mat@redstudio.co.uk'); 
+						
 						
 						$this->email->subject('Contact Page');
 						$this->email->message("$name has completed the contact page.

@@ -16,14 +16,7 @@
          
         <li <?php if($menu['menu_category']=='5'){echo "class='current'";}?>><a href="<?=base_url()?>news"><span>News</span></a>
         	
-        	<?php $role = $this->session->userdata('role'); 
-        	if($role == 1)
-        	{?>
-        	<ul>
         	
-        	<li><a href="<?=base_url()?>cases"><span>Selected Cases</span></a></li>
-        	</ul>       
-        	<?php }?>
         </li> 
          <li <?php if($menu['menu_category']=='10'){echo "class='current'";}?>><a href="<?=base_url()?>welcome/content/laworld"><span>LAWorld</span></a>
         	       
@@ -41,7 +34,7 @@
 			 <li <?php if($menu['menu_category']=='11'){echo "class='current'";}?>><a href="<?=base_url()?>attachments"><span>Attachments</span></a>
         	       
         </li>
-                       
+         <li><a href="<?=base_url()?>cases"><span>Selected Cases</span></a></li>              
 		<?php }	
          
        ?>

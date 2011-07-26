@@ -22,7 +22,16 @@
 
 <tr>
 <td><img src="<?=base_url()?>images/pdf.png" width="28px"></td>
-<td><a href="<?=base_url()?>uploads/<?=$case['case_file'];?>"><?=$case['case_title'];?></a></td>
+<td><a href="<?=base_url()?>uploads/<?=$case['case_file'];?>"><?=$case['case_title'];?></a>
+   <?php 
+        $is_logged_in = $this->session->userdata('is_logged_in');
+		$role = $this->session->userdata('role');
+		if(isset($is_logged_in) && $role == 1)
+		{ ?>
+	- <a href="<?=base_url()?>admin/edit_case/<?=$case['case_id'];?>">edit</a>
+	- <a href="<?=base_url()?>admin/delete_case/<?=$case['case_id'];?>">delete</a></td>
+<?php } ?>
+</td>
 </tr>
 
 <?php endforeach;?>

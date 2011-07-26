@@ -221,6 +221,49 @@ function submit_news()
 		$this->load->vars($data);
 		$this->load->view('template');
 	}
+	
+	function edit_case($case_id)
+	{
+		$id = "selected_cases";
+		$data['case_id'] = $case_id;
+		$data['content'] =	$this->content_model->get_content($id);
+		$data['case'] = $this->cases_model->get_case($case_id);
+		$data['menu'] =	$this->content_model->get_menus();
+		$data['main'] = "admin/edit_case";
+		$data['slideshow'] = "global/slideshow1";
+		$data['news'] = $this->news_model->list_news();
+		$data['sidebar'] = 'sidebar/news';
+		$data['page'] = $id;
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		
+		if($is_logged_in!=NULL)
+			{
+			$data['edit'] = site_url("admin/edit/$id");
+			$data['add'] = site_url("admin/add_case/");
+	        }
+			                       
+			
+	
+		$this->load->vars($data);
+		$this->load->view('template');
+	}
+	
+	function change_case()
+	{
+		$id = $this->input->post('case_id');
+		$this->cases_model->edit($id);
+		redirect('cases', 'refresh');
+	}
+	function delete_case($id)
+	{
+		
+		
+		$this->cases_model->delete($id);
+		
+	
+		redirect('cases', 'refresh');
+	}
+	
 	function add_pro()
 	{
 		$data['page'] ='professionals';

@@ -10,18 +10,42 @@ class Cases_model extends Model {
         						'case_title' =>$this->input->post('title'),
 								'case_file'=>$file ));
     }
-
-	function delete($fileid)
+	function edit($id)
+    {
+        $this->db->where('case_id', $id);
+        $dateadded = $this->input->post('date_added');
+        $unixtime = strtotime($dateadded);
+	    $this->db->update('cases', array(
+								'added_by'=>$this->session->userdata('user_id'),
+								'date_added' => $unixtime,
+        						'case_title' => $this->input->post('title')
+								 ));
+    }
+	
+	function delete($id)
 	{
-		$query = $this->db->get_where('cases',array('id'=>$fileid));
-		$result = $query->result();
-		$query = $this->db->delete('cases', array('id'=>$fileid));
-		return $result[0]->name;
+	//delete file from server, first get filename
+	$casedata = $this->get_case($id);
+		foreach($casedata as $row):
+		
+			$filename = $row['case_file'];
+		
+		endforeach;
+	
+	unlink('./uploads/'.$filename.'');
+	
+	//remove any assigned attachments from content
+	$this->db->delete('case_links', array('case_id' => $id)); 
+	
+		
+	//delete from database	
+	$this->db->delete('cases', array('case_id' => $id)); 
 	}
+	
 	function list_cases()
 		{
 			$data = array();
-			$this->db->orderby('date_added', 'asc');
+			$this->db->orderby('case_id', 'desc');
 			$query = $this->db->get('cases');
 			if ($query->num_rows() > 0)
 			{
@@ -39,7 +63,7 @@ class Cases_model extends Model {
 	function assigned_cases($id)
 	{
 		$data = array();
-			$this->db->orderby('date_added', 'asc');
+			$this->db->orderby('cases.case_id', 'desc');
 			$this->db->join('case_links', 'case_links.case_id = cases.case_id', 'left');
 			$this->db->where('case_links.professional_id', $id);
 			$query = $this->db->get('cases');
@@ -88,4 +112,21 @@ class Cases_model extends Model {
 		
 		return $data;
 	}	
+	function get_case($id) // case id
+		{
+			$data = array();
+			$this->db->where('case_id', $id);
+			
+			$query = $this->db->get('cases');
+			if ($query->num_rows() == 1)
+			{
+				foreach ($query->result_array() as $row)
+				
+				$data[] = $row;
+				
+			}
+		$query->free_result();
+		
+		return $data;
+		}
 }

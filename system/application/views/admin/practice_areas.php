@@ -26,7 +26,9 @@
 	$("#sortable").sortable({
    update: function(event,ui)
         {
+
           $.post("<?=base_url()?>professionals/ajaxsort", { pages: $('#sortable').sortable('serialize') } );
+
         }
   });
 	$("#sortable").disableSelection();
