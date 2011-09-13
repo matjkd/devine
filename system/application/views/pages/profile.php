@@ -1,16 +1,20 @@
-<h1>Biography
 
-<?php foreach($professional as $profile):
+
+<?php foreach($professional as $profile):?>
+
+<h1>Biography <a href="<?=base_url()?>professionals/pdf_profile/<?=$profile['professional_id']?>"><img alt="print pdf of this profile"  src="<?=base_url()?>images/pdf.png"/></a>
+
+<?php
 if(isset($edit))
 {
-	echo " - <a href='".base_url()."admin/editpro/".$profile['professional_id']."'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/edit_page.png'></a>";
+	echo "  <a href='".base_url()."admin/editpro/".$profile['professional_id']."'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/edit_page.png'></a>";
 }
 endforeach; ?>
 </h1>
 <?php foreach($professional as $row): ?>
 
 
-<div style="float:left; padding:0 5px 5px 0;"><img width="120px" height="119px" src="<?=base_url()?>images/profiles/<?=$row['image_location'];?>"></div>
+<div style="float:left; padding:0 5px 5px 0;"><img alt="profile image"  width="120px" height="119px" src="<?=base_url()?>images/profiles/<?=$row['image_location'];?>"></div>
 
 		<strong><?=$row['firstname'];?> <?=$row['middlename'];?> <?=$row['lastname'];?></strong><br/>
 <?=$row['title'];?><br/>

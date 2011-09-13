@@ -6,7 +6,8 @@ function __Construct()
 	{
 		parent::__Construct();
 		$this->load->model('professionals_model');
-		$this->load->model('attachments_model');	
+		$this->load->model('attachments_model');
+                 $this->load->plugin('to_pdf');   	
 	}
 function index()
 	{
@@ -82,6 +83,18 @@ function view_profile($profile_id)
 		$this->load->vars($data);
 		$this->load->view('template');
 	}
+        
+function pdf_profile($profile_id)
+    {
+                      
+                        $data['professional'] = $this->professionals_model->get_professional($profile_id);
+                        $data['assigned_practices'] = $this->professionals_model->assigned_practice_areas($profile_id);
+                        $this->load->vars($data);
+                        $this->load->view('printouts/pdf');
+			$stream = TRUE;
+			$html = $this->load->view('printouts/pdf', $data, true);
+			pdf_create($html, 'Profile_'.$profile_id.'', $stream);
+    }
 	
 function practice($practice_id)
 	{
