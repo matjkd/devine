@@ -12,11 +12,11 @@
 <?php
 
 $shortnews = substr($news['news_content'], 0, 300);
-$shortnews = strip_tags($shortnews);
-echo $shortnews;
-echo "<br/><br/>";
+$shortnews = strip_tags($shortnews, '<em><strong>');
+echo trim($shortnews);
+echo "...<br/><br/>";
 ?>
-<a href="<?=base_url()?>news/view_item/<?=$news['news_id']?>">Read More...</a>
+<a href="<?=base_url()?>news/view_item/<?=$news['news_id']?>">Read More</a>
 
 <br/>
 </div>

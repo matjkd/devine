@@ -10,26 +10,31 @@
 body {
   margin: 10pt 22pt 24pt 22pt;
    font-family: 'Helvetica', 'Arial', 'Sans-serif';
-  font-size:8px;
+  font-size:10px;
       font-weight: light;
+      width:570px;
 }
-.disc li { list-style-type: disc; }
-.circle li { list-style-type: circle; }
-.square li { list-style-type: square; }
-.image li { list-style-type: square; list-style-image:url(images/png.png)}
-.missing li { list-style-type: square; list-style-image:url(dummy.png)}
-.nobullet li { list-style-type: none;}
-.noimage li { list-style-type: none; list-style-image:url(dummy.png)}
-.bigimage li { list-style-type: square; list-style-image:url(images/dokuwiki-128.png)}
-.mindentimage li { list-style-type: square; list-style-image:url(images/png.png); margin-left:50px;}
-.mindentimage2 li { list-style-type: square; list-style-image:url(images/png.png); margin-left:100px;}
-.pindentimage li { list-style-type: square; list-style-image:url(images/png.png); padding-left:50px;}
-.pindentimage2 li { list-style-type: square; list-style-image:url(images/png.png); padding-left:100px;}
-.mindentsquare li { list-style-type: square; margin-left:50px;}
-.mindentsquare2 li { list-style-type: square; margin-left:100px;}
-.pindentsquare li { list-style-type: square; padding-left:50px;}
-.pindentsquare2 li { list-style-type: square; padding-left:100px;}
+ul {
+  list-style-type:none;
+    margin-top: 0.25em;
+  padding-left: 30px;
+  
+  
 
+}
+
+
+li {
+      list-style-type:disc;
+     margin-top: 0.5em;
+  vertical-align: top;
+  padding-left: 5px;
+ 
+}
+
+body>*>li {
+  margin-right: 40px;  /* keep things in line */
+}
 em {
 
     font-weight: lighter;
@@ -64,6 +69,7 @@ em {
 <?php  $bio = str_replace("’", "&#39;", $bio);?>
 <?php  $bio = str_replace("“", "&quot;", $bio);?>
 <?php  $bio = str_replace("”", "&quot;", $bio);?>
+      <?php  $bio = str_replace("[break]", "<div  style='page-break-before:always;'></div>", $bio);?>
 <?php  $bio = str_replace("<ul>", "<ul class='disc'>", $bio);?>
 <?=$bio?>
         
@@ -75,22 +81,27 @@ em {
 <?php  $awards = str_replace("’", "&#39;", $awards);?>
 <?php  $awards = str_replace("“", "&quot;", $awards);?>
 <?php  $awards = str_replace("”", "&quot;", $awards);?>
+  <?php  $awards = str_replace("[break]", "<div  style='page-break-before:always;'></div>", $awards);?>
 <?=$awards?>
 <?php }?>
 
 <?php if($row['involvement']!=NULL) {?>
 <br/><h2>Professional &amp; Community Involvement</h2>
-<?=$row['involvement']?>
+<?php $involvement = $row['involvement'];?>
+ <?php  $involvement = str_replace("[break]", "<div  style='page-break-before:always;'></div>", $involvement);?>
+<?=$involvement?>
 <?php }?>
 
 <?php if($row['education']!=NULL) {?>
-<br/><h2 style="page-break-before:always;">Education</h2>
+
+<br/><h2 >Education</h2>
 <?php $education = $row['education'];?>
 <?php  $education = str_replace("™", "&#153;", $education);?>
 <?php  $education = str_replace("–", "-", $education);?>
 <?php  $education = str_replace("’", "&#39;", $education);?>
 <?php  $education = str_replace("“", "&quot;", $education);?>
 <?php  $education = str_replace("”", "&quot;", $education);?>
+ <?php  $education = str_replace("[break]", "<div  style='page-break-before:always;'></div>", $education);?>
 <?=$education?>
 <?php }?>
 

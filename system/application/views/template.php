@@ -76,7 +76,7 @@
 	?>
 
 
-
+<?=$this->load->view('global/warning')?>
 <?php 
 
 if(isset($main))

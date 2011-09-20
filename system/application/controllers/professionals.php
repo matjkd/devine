@@ -7,6 +7,7 @@ function __Construct()
 		parent::__Construct();
 		$this->load->model('professionals_model');
 		$this->load->model('attachments_model');
+                $this->load->model('captcha_model');
                  $this->load->plugin('to_pdf');   	
 	}
 function index()
@@ -61,6 +62,7 @@ function view()
 function view_profile($profile_id)
 	{
 		$id = "professionals";
+                $data['profile_id'] = $profile_id;
 		$data['content'] =	$this->content_model->get_content($id);
 		$data['professional'] = $this->professionals_model->get_professional($profile_id);
 		$data['menu'] =	$this->content_model->get_menus();
@@ -70,6 +72,9 @@ function view_profile($profile_id)
 		$data['cases'] = $this->professionals_model->get_cases($profile_id);
 		$data['b'] = "sidebar/profile";
 		$is_logged_in = $this->session->userdata('is_logged_in');
+
+              $data['captcha'] = $this->captcha_model->initiate_captcha();
+
 		
 		if($is_logged_in!=NULL)
 			{
@@ -94,6 +99,36 @@ function pdf_profile($profile_id)
 			$stream = TRUE;
 			$html = $this->load->view('printouts/pdf', $data, true);
 			pdf_create($html, 'Profile_'.$profile_id.'', $stream);
+    }
+
+
+    function print_profile($profile_id)
+    {
+
+                        $data['professional'] = $this->professionals_model->get_professional($profile_id);
+                        $data['assigned_practices'] = $this->professionals_model->assigned_practice_areas($profile_id);
+                        $data['print'] = TRUE;
+                        $data['config_base_path'] = "/";
+                        $this->load->vars($data);
+                        $this->load->view('printouts/pdf');
+
+                        $this->load->helper('file');
+		
+
+			$stream = FALSE;
+			$this->load->view('printouts/pdf', $data, true);
+			
+    }
+    function test_profile($profile_id)
+    {
+
+                        $data['professional'] = $this->professionals_model->get_professional($profile_id);
+                        $data['assigned_practices'] = $this->professionals_model->assigned_practice_areas($profile_id);
+                        $this->load->vars($data);
+                        $this->load->view('printouts/pdf');
+			$stream = TRUE;
+		 $this->load->view('printouts/pdf', $data, true);
+			//pdf_create($html, 'Profile_'.$profile_id.'', $stream);
     }
 	
 function practice($practice_id)

@@ -18,17 +18,23 @@
 
 <?php if($right['awards']!=NULL) {?>
 <br/><h2>Awards &amp; Recognitions</h2>
-<?=$right['awards']?>
+<?php $awards = $right['awards']; ?>
+     <?php  $awards = str_replace("[break]", "", $awards);?>
+ <?=$awards?>
 <?php }?>
 
 <?php if($right['involvement']!=NULL) {?>
 <br/><h2>Professional &amp; Community Involvement</h2>
-<?=$right['involvement']?>
+<?php $involvement = $right['involvement'];?>
+ <?php  $involvement = str_replace("[break]", "", $involvement);?>
+<?=$involvement?>
 <?php }?>
 
 <?php if($right['education']!=NULL) {?>
 <br/><h2>Education</h2>
-<?=$right['education']?>
+<?php $education = $right['education'];?>
+ <?php  $education = str_replace("[break]", "", $education);?>
+<?=$education?>
 <?php }?>
 
 

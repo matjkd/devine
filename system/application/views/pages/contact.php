@@ -10,6 +10,30 @@ Our offices are located on the eighth floor, 777 Brickell Avenue; at the corner 
 </div>
 
 
-<div style="float:left; width:425px;">
-<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.uk/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=117673509114596995355.00048d88efd8a2024ea61&amp;ll=25.766349,-80.19011&amp;spn=0.013527,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.co.uk/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=117673509114596995355.00048d88efd8a2024ea61&amp;ll=25.766349,-80.19011&amp;spn=0.013527,0.018239&amp;z=15&amp;source=embed" style="color:#0000FF;text-align:left">Devine Goodman Rasco & Wells, P.A</a> in a larger map</small>
-</div> 
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+
+      function initialize() {
+        var mapDiv = document.getElementById('map-canvas');
+        var latLng = new google.maps.LatLng(25.766349,-80.19011);
+        var map = new google.maps.Map(mapDiv, {
+          center: latLng,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+      
+        var image = 'http://code.google.com/apis/maps/documentation/javascript/examples/images/beachflag.png';
+        var myLatLng = new google.maps.LatLng(25.766349,-80.19011);
+        var beachMarker = new google.maps.Marker({
+          position: latLng,
+          map: map,
+
+        });
+      }
+
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+ <div id="map-canvas" style="float:left; width: 425px; height: 360px"></div>

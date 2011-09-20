@@ -8,11 +8,14 @@ function pdf_create($html, $filename, $stream=TRUE)
     $dompdf->load_html($html);
     $dompdf->render();
     if ($stream) {
+         $CI =& get_instance();
+     	 $CI->load->helper('file');
+
         $dompdf->stream($filename.".pdf");
     } else {
-        $CI =& get_instance();
+            $CI =& get_instance();
         $CI->load->helper('file');
-        write_file("./report_temp/report_$filename.pdf", $dompdf->output());
+        write_file("./images/reports/$filename.pdf", $dompdf->output());
     }
 }
 ?>

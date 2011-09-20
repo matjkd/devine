@@ -57,11 +57,12 @@ function view_item()
 				$id = $this->uri->segment(3);
 			}
 		$data['content'] =	$this->content_model->get_content('news');
-		$data['news'] = $this->news_model->get_news($id);
+		$data['news'] = $this->news_model->list_news();
+                $data['newsitem'] = $this->news_model->get_news($id);
 		$data['slideshow'] = "global/slideshow1";
 		$data['sidebar'] = 'sidebar/news';
 		$data['menu'] =	$this->content_model->get_menus();
-		$data['main'] = "pages/view_news";
+		$data['main'] = "pages/view_news_item";
 		$data['page'] = "news";
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		

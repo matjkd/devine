@@ -2,7 +2,8 @@
 
 <?php foreach($professional as $profile):?>
 
-<h1>Biography <a href="<?=base_url()?>professionals/pdf_profile/<?=$profile['professional_id']?>"><img alt="print pdf of this profile"  src="<?=base_url()?>images/pdf.png"/></a>
+<h1>Biography <a href="<?=base_url()?>professionals/pdf_profile/<?=$profile['professional_id']?>">
+        <div style="float:right;"><img alt="print pdf of this profile"  src="<?=base_url()?>images/icons/pdf_button.png"/></a><?=$this->load->view('popups/emailpage')?></div>
 
 <?php
 if(isset($edit))
@@ -16,7 +17,7 @@ endforeach; ?>
 
 <div style="float:left; padding:0 5px 5px 0;"><img alt="profile image"  width="120px" height="119px" src="<?=base_url()?>images/profiles/<?=$row['image_location'];?>"></div>
 
-		<strong><?=$row['firstname'];?> <?=$row['middlename'];?> <?=$row['lastname'];?></strong><br/>
+		<strong><?=$row['firstname'];?> <?=$row['middlename'];?>. <?=$row['lastname'];?></strong><br/>
 <?=$row['title'];?><br/>
 
 
@@ -28,7 +29,11 @@ endforeach; ?>
 
 
 
- <div style="clear:both;"><?=$row['bio']?></div>
+ <div style="clear:both;">
+<?php $bio = $row['bio']; ?>
+     <?php  $bio = str_replace("[break]", "<span><span/>", $bio);?>
+ <?=$bio?>
+ </div>
 <?php endforeach; ?>
 
 <!--
@@ -66,3 +71,9 @@ else
 <h3>Select Publications</h3>
 <?=$this->load->view('pages/list_attachments')?>
 <?php } ?>
+
+
+
+
+
+
