@@ -1,4 +1,12 @@
 <head>
+
+<?php
+//here we will add custom meta data set in the database
+if(isset($content)) { }
+
+
+
+?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="robots" content="index, follow" /> 
 <meta name="keywords" content="Devine Goodman Rascoe and Wells, lawyers, florida, wlrn" /> 

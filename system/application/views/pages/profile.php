@@ -2,8 +2,7 @@
 
 <?php foreach($professional as $profile):?>
 
-<h1>Biography <a href="<?=base_url()?>professionals/pdf_profile/<?=$profile['professional_id']?>">
-        <div style="float:right;"><img alt="print pdf of this profile"  src="<?=base_url()?>images/icons/pdf_button.png"/></a><?=$this->load->view('popups/emailpage')?></div>
+<h1>Biography 
 
 <?php
 if(isset($edit))
@@ -24,9 +23,10 @@ endforeach; ?>
 <a target="_blank" href="<?=base_url()?>images/vcards/<?=$row['vcard'];?>">Download Vcard</a><br/>
 
 
-<a href="mailto:<?=$row['email'];?>">email:<?=$row['email']?></a>
+<a href="mailto:<?=$row['email'];?>">email:<?=$row['email']?></a><br/><br/>
 
 
+        <div style="float:left;"><a alt="download pdf" href="<?=base_url()?>professionals/pdf_profile/<?=$profile['professional_id']?>"><img alt="print pdf of this profile"  src="<?=base_url()?>images/icons/pdf2.png"/></a> <?=$this->load->view('popups/emailpage')?></div>
 
 
  <div style="clear:both;">

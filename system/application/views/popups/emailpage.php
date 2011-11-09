@@ -59,4 +59,4 @@ $(document).ready(function() {
 
 </div>
 
-<span id="formopener" style="cursor:pointer;"><img src="<?=base_url()?>images/icons/emailButton.png" /></span>
+<span id="formopener" style="cursor:pointer; padding-left:10px;"><img alt="email this page" src="<?=base_url()?>images/icons/email2.png" /></span>
