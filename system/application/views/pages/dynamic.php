@@ -13,7 +13,10 @@
 <p>
 <?=$row['content'];?>
 </p>
-
+<?php if(isset($row['extra']) && $row['extra'] != NULL) {
+    
+    $this->load->view("extra/".$row['extra']);
+}?>
 
 <?php endforeach;
 ?>

@@ -7,7 +7,13 @@
 
 </div>
 
-<div style="float:left; padding:0px; width:510px;">
+<div style="float:right; padding:0 10px; width:200px;">
+
+<a href="http://www.superlawyers.com/" target="_blank"><img width="200px" src="<?=base_url()?>images/logos/superlawyers.jpg" alt="SuperLawyers"></a>
+
+</div>
+
+<div style="float:left; padding:0px; width:310px;">
 <?=$this->load->view('global/menu_footer')?>
 Website Developed by <a href="http://www.redstudio.co.uk">Redstudio Design Limited</a>. <?php $this->load->view('user/login'); ?>	
 

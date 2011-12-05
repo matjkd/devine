@@ -15,9 +15,15 @@
         
          
         <li <?php if($menu['menu_category']=='5'){echo "class='current'";}?>><a href="<?=base_url()?>news"><span>News</span></a>
-        	
+        
         	
         </li> 
+        
+       <li <?php if($menu['menu_category']=='13'){echo "class='current'";}?>><a href="<?=base_url()?>welcome/representative_cases"><span>Representative Cases</span></a>
+        	
+        	
+        </li>
+        
          <li <?php if($menu['menu_category']=='10'){echo "class='current'";}?>><a href="<?=base_url()?>welcome/content/laworld"><span>LAWorld</span></a>
         	       
         </li>
