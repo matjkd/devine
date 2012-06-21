@@ -104,8 +104,13 @@ foreach($professionals as $row1):?>
 </tbody>
 </Table>
 
-<?php	if(isset($edit))
-			{
+
+
+<?php	if(isset($edit)) {?>
+<br/>
+<h3>Not Active</h3>
+<?php
+			
 			
 			 foreach($inactive_professionals as $row2):?>
 			

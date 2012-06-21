@@ -215,13 +215,14 @@ text-align: left;
 	bottom: 0px;
 }
 .site_base {
-	height: 60px;
+	height: 90px;
 	background: transparent;
 	margin:0px;
 	padding:20px 0px 20px 0px;
 	width:960px;
 	display:block;
-	border-top:solid 1px #4d4d4d;
+	border-top:solid 1px #bbbbbb;
+        border-bottom:solid 1px #bbbbbb;
 }
 .logo {
 	float:left;
@@ -427,6 +428,9 @@ Profiles
 	float:left;
 	width:340px;
 	
+}
+#menu_footer {
+    float:left;
 }
 #menu_footer ul{
 	list-style-type:circle;

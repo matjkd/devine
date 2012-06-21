@@ -31,7 +31,7 @@ jQuery(function() {
 	
 	<div class="form_label">Title:</div> <?=form_input('title', $row['title'])?><br/><br/>
 	
-
+                <div class="form_label">Email:</div> <?=form_input('email', $row['email'])?><br/><br/>
 <div class="form_label">Active:</div> <?=form_checkbox('active', '1', $row['active'])?>
 </div>
 <div style="clear:both;"></div>
