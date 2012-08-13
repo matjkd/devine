@@ -18,15 +18,7 @@
         
         <img alt="profile image"  width="120px" height="119px" src="<?= base_url() ?>images/profiles/<?= $row['image_location']; ?>"><br/>
 
-     <?php if($row['linkedIn'] != NULL) {?>
-        
-        <a href="<?=$row['linkedIn']?>">
-      
-          <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Mat Sadler's profile on LinkedIn">
-        
-    </a>
-        <?php } ?>
-
+     
 
     </div>
 
@@ -44,7 +36,25 @@
     <br/><br/>
 
 
-    <div style="float:left;"><a alt="download pdf" href="<?= base_url() ?>professionals/pdf_profile/<?= $profile['professional_id'] ?>"><img alt="print pdf of this profile"  src="<?= base_url() ?>images/icons/pdf2.png"/></a> <?= $this->load->view('popups/emailpage') ?></div>
+    <div style="float:left;">
+        <?php if($row['linkedIn'] != NULL) {?>
+        <span style="padding-right:10px;">
+        <a href="<?=$row['linkedIn']?>">
+      
+          <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View profile on LinkedIn">
+        
+    </a>
+        </span>
+        <?php } ?>
+        
+        <a alt="download pdf" href="<?= base_url() ?>professionals/pdf_profile/<?= $profile['professional_id'] ?>">
+            <img style="padding-bottom:4px;" alt="download and print a pdf of this profile"  src="<?= base_url() ?>images/icons/pdf2.png"/></a>
+ <?= $this->load->view('popups/emailpage') ?>
+    
+    
+    
+    </div>
+
 
 
 
@@ -52,7 +62,7 @@
     <div style="clear:both;">
         <?php $bio = $row['bio']; ?>
         <?php $bio = str_replace("[break]", "<span><span/>", $bio); ?>
-        <?= $bio ?>
+        <p><?= $bio ?></p>
     </div>
 <?php endforeach; ?>
 
