@@ -3,7 +3,7 @@ $(function() {
     // run the code in the markup!
 	$('#s1').cycle({ 
 	    fx: 'blindY',
-	    speed:    500, 
+	    speed:    1500, 
 	    timeout:  7000  
 	});
     

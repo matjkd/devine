@@ -36,6 +36,15 @@ jQuery(function() {
 <textarea cols=75 rows=20 name="content" id="content" class='wymeditor'><?=$row['content'];?></textarea>
 
 <?=form_input('menu_title', $row['menu_title'])?>
+
+<br/>
+Meta Description<br/>
+<textarea  cols=65 rows=2 name="metadesc"><?=$row['metadesc']?></textarea>
+<br/>
+
+Meta Title<br/>
+<textarea  cols=65 rows=2 name="metatitle"><?=$row['metatitle']?></textarea>
+<br/>
 <input type="submit" class="wymupdate" />
 <?=form_close()?> 
 <?php endforeach;

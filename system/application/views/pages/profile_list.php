@@ -112,13 +112,13 @@ foreach($professionals as $row1):?>
 <?php
 			
 			
-			 foreach($inactive_professionals as $row2):?>
+			if(isset($inactive_professionals)){ foreach($inactive_professionals as $row2):?>
 			
 			<a href="<?=base_url()?>professionals/view_profile/<?=$row2['professional_id'];?>">
 				<strong><?=$row2['firstname'];?> <?=$row2['middlename'];?>. <?=$row2['lastname'];?></strong> </a>
 				<br/>
 	
-<?php endforeach; 
+<?php endforeach; } else { echo "No inactive Lawyers";}
 			} ?>
 <?=$this->load->view('pages/list_attachments')?>
 

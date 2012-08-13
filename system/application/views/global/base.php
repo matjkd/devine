@@ -9,13 +9,13 @@
 
 <div style="float:right; padding:0 40px; width:200px;">
 
-<a href="http://www.superlawyers.com/" target="_blank"><img width="200px" src="<?=base_url()?>images/logos/superlawyers.jpg" alt="SuperLawyers"></a>
+<a href="http://www.superlawyers.com/" target="_blank"><img width="200px" src="https://s3.amazonaws.com/devinegoodman/SL2012_gray.jpg" alt="SuperLawyers"></a>
 
 </div>
 
 <div style="float:right; padding:0 40px; width:100px;">
 
-<a href="http://www.floridatrend.com/law_elite.asp" target="_blank"><img width="100px" src="<?=base_url()?>images/logos/le_2011bw_s.gif" alt="Florida Legal Elite"></a>
+<a href="http://www.floridatrend.com/law_elite.asp" target="_blank"><img width="100px" src="https://s3.amazonaws.com/devinegoodman/le_2012bw_s.gif" alt="Florida Legal Elite"></a>
 
 </div>
 

@@ -34,6 +34,8 @@ class Welcome extends MY_Controller {
         foreach ($data['content'] as $row): //get content id 
 
             $content_id = $row['content_id'];
+          $data['meta_description'] = $row['metadesc'];
+          $data['metatitle'] = $row['metatitle'];
 
         endforeach;
 
@@ -82,6 +84,7 @@ class Welcome extends MY_Controller {
 
         if ($is_logged_in != NULL) {
             $data['edit'] = site_url("admin/edit/$id");
+             $data['create_case'] = site_url("admin/create_case");
         }
 
         $this->load->vars($data);

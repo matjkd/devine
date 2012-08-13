@@ -99,6 +99,7 @@ class Professionals_model extends Model {
             'admissions' => $this->input->post('admissions'),
             'awards' => $this->input->post('awards'),
             'involvement' => $this->input->post('involvement'),
+            'linkedIn' => $this->input->post('linkedIn'),
             'active' => $this->input->post('active')
         );
 

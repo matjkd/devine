@@ -10,9 +10,27 @@ if(isset($content)) { }
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="robots" content="index, follow" /> 
 <meta name="keywords" content="Devine Goodman Rascoe and Wells, lawyers, florida, wlrn" /> 
-<meta name="title" content="Devine Goodman Rascoe and Wells" /> 
+
+<title><?php if (isset($metatitle) && $metatitle != NULL) {
+    echo $metatitle;
+} else {
+    if(isset($title) && $title != NULL) { 
+        echo $title;
+    } else {
+        echo "Devine Goodman Rascoe and Wells";
+    }
+} ?></title>
+
 <meta name="author" content="Redstudio Design Limited" /> 
-<meta name="description" content="Devine Goodman Rascoe and Wells, P.A." /> 
+
+<meta name="description" content="<?php if (isset($meta_description) && $meta_description != NULL) {
+    echo $meta_description;
+} else {?>
+    
+Devine Goodman Rascoe and Wells, P.A. Florida based Law firm
+<?php } ?>
+ " />
+
 <meta name="google-site-verification" content="9R-L-X5QA8Kmal_Myd29X7XY9SvXoLGCgW37NYHdWIU" /> 
 
 
@@ -32,7 +50,7 @@ if(isset($content)) { }
 <script src="<?=base_url()?>js/jquery.cycle.all.min.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/global/sl_settings.js" type="text/javascript"></script>
 <script src="<?=base_url()?>js/menu.js" type="text/javascript"></script>
-<script src="<?=base_url()?>js/menu.js" type="text/javascript"></script>
+
 
 <script src="<?=base_url()?>js/jquery.dataTables.min.js" type="text/javascript"></script>
 

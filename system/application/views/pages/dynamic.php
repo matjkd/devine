@@ -7,6 +7,10 @@
 {
 	echo " - <a href='$edit'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/edit_page.png'></a>";
 }
+if(isset($create_case))
+{
+	echo "  <a href='$create_case'><img width='20px' height='20px' alt='edit' src='".base_url()."images/icons/add.png'></a>";
+}
 
 ?>
 </h1>

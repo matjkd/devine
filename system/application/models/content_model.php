@@ -48,6 +48,8 @@ class Content_model extends Model {
         $content_update = array(
             'content' => $this->input->post('content'),
             'menu_title' => $this->input->post('menu_title'),
+                'metadesc' => $this->input->post('metadesc'),
+                'metatitle' => $this->input->post('metatitle'),
             'title' => $this->input->post('title')
         );
 
@@ -78,6 +80,15 @@ class Content_model extends Model {
             'added_by' => $this->session->userdata('user_id'),
             'title' => $this->input->post('title'),
             'file' => $file));
+    }
+     function SaveForm($form_data) {
+        $this->db->insert('content', $form_data);
+
+        if ($this->db->affected_rows() == '1') {
+            return TRUE;
+        }
+
+        return FALSE;
     }
 
 }
