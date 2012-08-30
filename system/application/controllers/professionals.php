@@ -26,6 +26,8 @@ class Professionals extends MY_Controller {
         foreach ($data['content'] as $row): //get content id 
 
             $content_id = $row['content_id'];
+              $data['meta_description'] = $row['metadesc'];
+          $data['metatitle'] = $row['metatitle'];
 
         endforeach;
 

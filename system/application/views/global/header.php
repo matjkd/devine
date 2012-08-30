@@ -9,7 +9,7 @@ if(isset($content)) { }
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="robots" content="index, follow" /> 
-<meta name="keywords" content="Devine Goodman Rascoe and Wells, lawyers, florida, wlrn" /> 
+<meta name="keywords" content="Devine Goodman Rasco and Wells, lawyers, florida, wlrn" /> 
 
 <title><?php if (isset($metatitle) && $metatitle != NULL) {
     echo $metatitle;
@@ -17,7 +17,7 @@ if(isset($content)) { }
     if(isset($title) && $title != NULL) { 
         echo $title;
     } else {
-        echo "Devine Goodman Rascoe and Wells";
+        echo "Devine Goodman Rasco and Wells";
     }
 } ?></title>
 
@@ -27,7 +27,7 @@ if(isset($content)) { }
     echo $meta_description;
 } else {?>
     
-Devine Goodman Rascoe and Wells, P.A. Florida based Law firm
+Devine Goodman Rasco and Wells, P.A. Florida based Law firm
 <?php } ?>
  " />
 

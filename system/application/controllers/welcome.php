@@ -64,9 +64,11 @@ class Welcome extends MY_Controller {
         $data['main'] = "pages/dynamic";
         $data['content'] = $this->content_model->get_content($id);
 
-        foreach ($data['content'] as $row): //get content id 
+             foreach ($data['content'] as $row): //get content id 
 
             $content_id = $row['content_id'];
+            $data['meta_description'] = $row['metadesc'];
+            $data['metatitle'] = $row['metatitle'];
 
         endforeach;
 

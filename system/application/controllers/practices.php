@@ -21,6 +21,14 @@ class Practices extends MY_Controller {
         $data['slideshow'] = "global/slideshow1";
         $data['menu'] = $this->content_model->get_menus();
 
+        foreach ($data['content'] as $row): //get content id 
+
+            $content_id = $row['content_id'];
+            $data['meta_description'] = $row['metadesc'];
+            $data['metatitle'] = $row['metatitle'];
+
+        endforeach;
+
         if (($this->uri->segment(3)) != NULL) {
             $id = $this->uri->segment(3);
             $data['main'] = "pages/practice";

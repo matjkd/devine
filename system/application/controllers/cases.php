@@ -17,6 +17,14 @@ class Cases extends MY_Controller {
         $id = "selected_cases";
 
         $data['content'] = $this->content_model->get_content($id);
+        
+            foreach ($data['content'] as $row): //get content id 
+
+            $content_id = $row['content_id'];
+            $data['meta_description'] = $row['metadesc'];
+            $data['metatitle'] = $row['metatitle'];
+
+        endforeach;
         $data['cases'] = $this->cases_model->list_cases();
 
         $data['menu'] = $this->content_model->get_menus();

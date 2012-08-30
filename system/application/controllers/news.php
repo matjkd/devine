@@ -19,6 +19,15 @@ class News extends MY_Controller {
             $id = $this->uri->segment(3);
         }
         $data['content'] = $this->content_model->get_content($id);
+        
+        
+        foreach ($data['content'] as $row): //get content id 
+
+            $content_id = $row['content_id'];
+            $data['meta_description'] = $row['metadesc'];
+            $data['metatitle'] = $row['metatitle'];
+
+        endforeach;
         $data['news'] = $this->news_model->list_news();
         $data['slideshow'] = "global/slideshow1";
         $data['sidebar'] = 'sidebar/news';
@@ -46,6 +55,15 @@ class News extends MY_Controller {
             $id = $this->uri->segment(3);
         }
         $data['content'] = $this->content_model->get_content('news');
+        
+        
+        foreach ($data['content'] as $row): //get content id 
+
+            $content_id = $row['content_id'];
+            $data['meta_description'] = $row['metadesc'];
+            $data['metatitle'] = $row['metatitle'];
+
+        endforeach;
         $data['news'] = $this->news_model->list_news();
         $data['newsitem'] = $this->news_model->get_news($id);
         $data['slideshow'] = "global/slideshow1";
