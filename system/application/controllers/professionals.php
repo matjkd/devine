@@ -90,6 +90,7 @@ class Professionals extends MY_Controller {
         $data['professional'] = $this->professionals_model->get_professional($profile_id);
         $data['assigned_practices'] = $this->professionals_model->assigned_practice_areas($profile_id);
         $this->load->vars($data);
+		$data['config_base_path'] = "/data/12/1/105/8/1105171/user/1159479/htdocs/";
         $this->load->view('printouts/pdf');
         $stream = TRUE;
         $html = $this->load->view('printouts/pdf', $data, true);

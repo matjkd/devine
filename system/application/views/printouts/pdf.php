@@ -47,7 +47,7 @@
     <hr/>
     <h1>Biography</h1>
 
-    <?php foreach ($professional as $row): ?>
+    <?php echo $_SERVER['DOCUMENT_ROOT']; foreach ($professional as $row): ?>
         <table style="width:570px">
             <tr>
                 <td style="width:120px;">
