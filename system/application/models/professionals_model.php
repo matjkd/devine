@@ -95,11 +95,13 @@ class Professionals_model extends Model {
             'title' => $this->input->post('title'),
             'email' => $this->input->post('email'),
             'bio' => $this->input->post('content'),
+            'image_location' => $this->input->post('image'),
             'education' => $this->input->post('education'),
             'admissions' => $this->input->post('admissions'),
             'awards' => $this->input->post('awards'),
             'involvement' => $this->input->post('involvement'),
             'linkedIn' => $this->input->post('linkedIn'),
+            'vcard' => $this->input->post('vcard'),
             'active' => $this->input->post('active')
         );
 

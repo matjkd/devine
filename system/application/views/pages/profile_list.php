@@ -85,7 +85,7 @@ foreach($professionals as $row1):?>
 	</td>
 	<td>
 	<a href="<?=base_url()?>professionals/view_profile/<?=$row1['professional_id'];?>">
-	<strong><?=$row1['firstname'];?> <?=$row1['middlename'];?>. <?=$row1['lastname'];?></strong> </a>
+	<strong><?=$row1['firstname'];?> <?=$row1['middlename'];?> <?=$row1['lastname'];?></strong> </a>
 	</td>
 	
 	<td>

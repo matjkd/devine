@@ -2077,7 +2077,7 @@ class  Cpdf {
 
     $xref = array();
 
-    $content = "%PDF-1.3\n%‚„œ”\n";
+    $content = "%PDF-1.3\n%√¢√£√è√ì\n";
 
     //  $content="%PDF-1.3\n";
     $pos = strlen($content);
@@ -2531,11 +2531,11 @@ class  Cpdf {
           // simple utility to convert them from pfa to pfb.
           $tmp =  get_magic_quotes_runtime();
 
-          set_magic_quotes_runtime(0);
+          ini_set('magic_quotes_runtime', 0);
 
           $data =  file_get_contents($fbfile);
 
-          set_magic_quotes_runtime($tmp);
+          ini_set('magic_quotes_runtime', $tmp);
 
 
           // create the font descriptor
@@ -4329,7 +4329,7 @@ class  Cpdf {
 
     $tmp =  get_magic_quotes_runtime();
 
-    set_magic_quotes_runtime(0);
+    ini_set('magic_quotes_runtime', 0);
 
     if  ( ($data =  file_get_contents($file)) ===  false) {
 
@@ -4345,7 +4345,7 @@ class  Cpdf {
       $errormsg =  'trouble opening file: '.$file;
     }
 
-    set_magic_quotes_runtime($tmp);
+    ini_set('magic_quotes_runtime', $tmp);
 
 
     if  (!$error) {
@@ -4669,12 +4669,12 @@ class  Cpdf {
 
     $tmp =  get_magic_quotes_runtime();
 
-    set_magic_quotes_runtime(0);
+    ini_set('magic_quotes_runtime', 0);
 
     $data =  file_get_contents($img);
 
     //fread($fp,filesize($img));
-    set_magic_quotes_runtime($tmp);
+    ini_set('magic_quotes_runtime', $tmp);
 
 
     //fclose($fp);
@@ -4740,7 +4740,7 @@ class  Cpdf {
 
     $tmp =  get_magic_quotes_runtime();
 
-    set_magic_quotes_runtime(0);
+    ini_set('magic_quotes_runtime', 0);
 
     if  ( ($data =  file_get_contents($tmpName)) ===  false) {
 
@@ -4757,7 +4757,7 @@ class  Cpdf {
     }
 
     //  $data = fread($fp,filesize($tmpName));
-    set_magic_quotes_runtime($tmp);
+    ini_set('magic_quotes_runtime', $tmp);
 
     //  fclose($fp);
     unlink($tmpName);

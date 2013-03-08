@@ -55,7 +55,7 @@
                 </td>
 
                 <td style="width:460px;">
-                    <strong><?= $row['firstname']; ?> <?= $row['middlename']; ?>. <?= $row['lastname']; ?></strong><br/>
+                    <strong><?= $row['firstname']; ?> <?= $row['middlename']; ?> <?= $row['lastname']; ?></strong><br/>
                     <?= $row['title']; ?><br/>
                     <a href="mailto:<?= $row['email']; ?>">email:<?= $row['email'] ?></a>
                 </td>

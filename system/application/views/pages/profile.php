@@ -22,7 +22,7 @@
 
     </div>
 
-    <strong><?= $row['firstname']; ?> <?= $row['middlename']; ?>. <?= $row['lastname']; ?></strong><br/>
+    <strong><?= $row['firstname']; ?> <?= $row['middlename']; ?> <?= $row['lastname']; ?></strong><br/>
     <?= $row['title']; ?><br/>
 
 

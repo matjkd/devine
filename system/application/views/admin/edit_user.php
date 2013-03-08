@@ -32,6 +32,10 @@
         <div class="form_label">Title:</div> <?= form_input('title', $row['title']) ?><br/><br/>
 
         <div class="form_label">Email:</div> <?= form_input('email', $row['email']) ?><br/><br/>
+        
+          <div class="form_label">Profile Image:</div> <?= form_input('image', $row['image_location']) ?><br/><br/>
+          
+           <div class="form_label">VCard filename:</div> <?= form_input('vcard', $row['vcard']) ?><br/><br/>
 
         <div class="form_label">LinkedIn Profile:</div> <?= form_input('linkedIn', $row['linkedIn']) ?><br/><br/>
         
