@@ -3,19 +3,19 @@
 </div>
 <div style="float:right; padding:0 40px; width:200px;">
 
-<a href="http://www.wlrn.org/" target="_blank"><img width="200px" src="<?=base_url()?>images/logos/wlrn.png" alt="DGRW is a proud sponsor of WLRN"></a>
+<a href="http://www.wlrn.org/" target="_blank"><img width="200px" src="https://s3.amazonaws.com/devinegoodman/wlrn.png" alt="DGRW is a proud sponsor of WLRN"></a>
 
 </div>
 
 <div style="float:right; padding:0 40px; width:200px;">
 
-<a href="http://www.superlawyers.com/" target="_blank"><img width="200px" src="https://s3.amazonaws.com/devinegoodman/SL2012_gray.jpg" alt="SuperLawyers"></a>
+<a href="http://www.superlawyers.com/" target="_blank"><img width="200px" src="https://s3.amazonaws.com/devinegoodman/SL2013_gray.jpg" alt="SuperLawyers"></a>
 
 </div>
 
 <div style="float:right; padding:0 40px; width:100px;">
 
-<a href="http://www.floridatrend.com/law_elite.asp" target="_blank"><img width="100px" src="https://s3.amazonaws.com/devinegoodman/le_2012bw_s.gif" alt="Florida Legal Elite"></a>
+<a href="http://www.floridatrend.com/legal-elite" target="_blank"><img width="100px" src="https://s3.amazonaws.com/devinegoodman/legal-elite.png" alt="Florida Legal Elite"></a>
 
 </div>
 

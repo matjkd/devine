@@ -103,6 +103,13 @@ class Admin extends My_Controller {
         $this->news_model->edit_news($id);
         redirect("admin/editnews/$id");
     }
+	
+	function delete_news() {
+		$id = $this->input->post('id');
+		
+		$this->news_model->delete_news($id);
+        redirect("news");
+	}
 
     function editpro($id) {
 

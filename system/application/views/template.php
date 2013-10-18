@@ -21,6 +21,7 @@
   <![endif]-->
 <div class="heading">
 	<div class="logo">
+	<img src="<?=base_url()?>images/logo.png" style="width:600px;"/>
 </div>
 </div>
 <div class="clear">

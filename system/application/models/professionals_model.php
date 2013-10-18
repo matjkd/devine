@@ -45,6 +45,7 @@ class Professionals_model extends Model {
 
     function get_professional_practice($id) {
         $data = array();
+		$this->db->where('active', '1');
         $this->db->orderby('lastname', 'asc');
         $this->db->join('professionals', 'practice_area_links.professional_id = professionals.professional_id', 'left');
         $this->db->where('practice_area_links.practice_area_id', $id);

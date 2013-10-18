@@ -226,10 +226,14 @@ text-align: left;
 }
 .logo {
 	float:left;
-	height:63px;
+	height:93px;
 	width:960px;
 	margin:20px 0 10px 0px;
-	background: url(/images/logo.png) no-repeat;
+	
+}
+.logo img {
+
+margin-top:20px;
 }
 .side {
 	width: 470px;

@@ -1,6 +1,6 @@
 <script type="text/javascript">
 	$(function() {
-		$("#datepicker").datepicker();
+		$("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
 	});
 	</script>
 <?php foreach($attachment as $row): ?>
